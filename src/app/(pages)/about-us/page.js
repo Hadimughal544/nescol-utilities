@@ -18,7 +18,7 @@ export default function About() {
                         Driving Simplicity in a Complex Utility World
                     </h1>
                     <p className="  text-base md:text-lg leading-relaxed text-justify">
-                        At Nescol Utilities, we believe managing your utilities shouldn’t be complicated. That’s why we’ve <br></br>built a customer-focused company that delivers straightforward solutions in energy, broadband, <br></br>water, payments, and more — all in one place. Whether you're a homeowner, small business, or <br></br>large enterprise, we take the confusion out of switching, saving, and scaling.
+                        At Nescol Utilities, we believe managing your utilities shouldn’t be complicated. That is why we have <br></br>built a customer-focused company that delivers straightforward solutions in energy, broadband, <br></br>water, payments, and more — all in one place. Whether you are a homeowner, small business, or <br></br>large enterprise, we take the confusion out of switching, saving, and scaling.
                     </p>
                 </div>
 
@@ -79,10 +79,10 @@ export default function About() {
 
 
                 <section>
-                    <h2 className=" text-2xl font-semibold text-blue-900 mb-4"> Let's work together</h2>
+                    <h2 className=" text-2xl font-semibold text-blue-900 mb-4"> {`Let's work together`}</h2>
                      <p className="text-lg leading-relaxed mb-4">
-          Whether you're moving premises, looking to cut costs, or just need advice, Nescol Utilities is here to make it happen.
-          We don’t just compare prices — we build partnerships. Let’s simplify your utilities and put you back in control.
+          {`Whether you're moving premises, looking to cut costs, or just need advice, Nescol Utilities is here to make it happen.
+          We do not just compare prices — we build partnerships. Let’s simplify your utilities and put you back in control.`}
         </p>
                 </section>
 
