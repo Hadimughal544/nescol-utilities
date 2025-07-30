@@ -8,13 +8,13 @@ export default function Energy() {
         <main>
             <div className="relative w-full h-[400px] md:h-[450px] lg:h-[500px] ">
                 <Image
-                    src="/assets/energy.jpg"
+                    src="/assets/energy1.jpg"
                     alt="services background"
                     fill
                     className="object-cover w-full h-full z-0 brightness-75 "
                 />
 
-                <div className="absolute inset-0 bg-blue-950/40 z-10" />
+                <div className="absolute inset-0 bg-blue-950/00 z-10" />
 
                 <div className="absolute inset-0 z-20 py-30 px-10 pb-10 flex items-end">
                     <div className="space-y-6">

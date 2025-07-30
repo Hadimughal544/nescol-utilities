@@ -34,13 +34,13 @@ export default function Services() {
             </h1>
 
             <div className=" flex flex-wrap  gap-6 justify-center md:justify-start ">
-                 <Link href="/energytype">
+                 <Link href={`/services/energy/energytype`}>
             <Box icon={<FaBolt />}  label="Energy" text=" Get the best electricity & gas rates."/>
             </Link>
-            <Link href="/services/Broadband/firstform">
+            <Link href={`/services/broadband/energytype`}>
             <Box icon={<FaWifi />} label="Broadband" text="Choose internet that meets your needs."/>
             </Link>
-            <Link href="/services/Water/firstform">
+            <Link href={`/services/water/energytype`}>
             <Box  icon={<FaTint />} label="Water" text="Reliable suppliers, sustainable solutions."/>
             </Link>
             <Link href="/services/POS/firstform">

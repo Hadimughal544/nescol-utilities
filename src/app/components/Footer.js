@@ -12,8 +12,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-10 pb-10">
           {/* Logo & Tagline */}
-          <div className="space-y-6">
-            <div>
+          <div className="space-y-6 text-center md:text-left">
+            <div className="flex justify-center md:justify-start">
               <Image
                 src="/assets/whitelogo.png"
                 alt="company logo"
@@ -26,7 +26,7 @@ export default function Footer() {
               Let your business thrive — we bring the <br />
               best deals to you.
             </p>
-            <div className="flex gap-4 text-2xl text-pink-500">
+            <div className="flex justify-center md:justify-start gap-4 text-2xl text-pink-500">
               <Link href="#"><IoLogoFacebook size={30} /></Link>
               <Link href="#"><IoLogoLinkedin size={30} /></Link>
               <Link href="#"><SiInstagram size={30} /></Link>
@@ -34,21 +34,21 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h2 className="text-2xl font-bold mb-4">Explore</h2>
             <ul className="flex flex-col space-y-2 text-md">
               <li><Link href="/" className="hover:underline">Home</Link></li>
-              <li><Link href="/energytype" className="hover:underline">Energy</Link></li>
-              <li><Link href="/Broadband" className="hover:underline">Broadband</Link></li>
+              <li><Link href="/services/energy/energytype" className="hover:underline">Energy</Link></li>
+              <li><Link href="/services/broadband/energytype" className="hover:underline">Broadband</Link></li>
               <li><Link href="/Servicespage" className="hover:underline">Services</Link></li>
               <li><Link href="/about-us" className="hover:underline">About Us</Link></li>
               <li><Link href="/complaint" className="hover:underline">Complaint</Link></li>
             </ul>
           </div>
 
-          {/* Contact Us Section (formerly Newsletter) */}
-          <div className="text-white p-6 rounded-lg space-y-6">
-            <h2 className="text-3xl font-bold text-white">Contact Us</h2>
+          {/* Contact Us Section */}
+          <div className="text-white p-6 rounded-lg space-y-6 text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">Contact Us</h2>
 
             <p className="text-base text-gray-300">
               We’re here to help.
@@ -63,7 +63,7 @@ export default function Footer() {
               </p>
 
               <div className="space-y-2">
-                <div className="flex gap-2 items-center">
+                <div className="flex justify-center md:justify-start gap-2 items-center">
                   <span className="text-pink-500 text-xl"><FaPhone /></span>
                   <p>
                     Phone:{" "}
@@ -73,7 +73,7 @@ export default function Footer() {
                   </p>
                 </div>
 
-                <div className="flex gap-2 items-center">
+                <div className="flex justify-center md:justify-start gap-2 items-center">
                   <span className="text-pink-500 text-xl"><HiOutlineMail /></span>
                   <p>
                     Email:{" "}
@@ -91,7 +91,7 @@ export default function Footer() {
         <div className="border-t border-gray-300 w-full"></div>
 
         {/* Bottom Text */}
-        <div className="text-center py-6 text-sm text-gray-500">
+        <div className="text-center py-6 text-xs md:text-sm text-gray-500">
           © NEIL & NESCOL LTD T/A Nescol Utilities. All rights reserved.
         </div>
       </div>

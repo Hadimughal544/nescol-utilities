@@ -20,7 +20,19 @@
 }
 
 body {
+  font-family: 'Exo', sans-serif;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Apply Exo for subtitles or specific elements */
+h1, h2, h3, .subtitle {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+input[type='number'].no-spinner::-webkit-inner-spin-button,
+input[type='number'].no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

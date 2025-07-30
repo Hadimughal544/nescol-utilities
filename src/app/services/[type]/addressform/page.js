@@ -1,10 +1,14 @@
 'use client';
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
+import { FaArrowRightLong } from "react-icons/fa6";
+import Image from 'next/image';
+import Link from "next/link";
 
 export default function Adressform() {
-    const { type } = useState;
+  const params = useParams();
+  const type = params.type;
+
   const [postcode, setPostcode] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState('');
@@ -30,16 +34,27 @@ export default function Adressform() {
 
   const handleSelect = (address) => {
     setSelectedAddress(address);
-    setSuggestions([]); // Clear suggestions after selection
+    setSuggestions([]);
   };
 
   const handleNext = () => {
-    // You can send the selected address through router or store
-    router.push(`/services/${type}/lastform`); // update path accordingly
+    router.push(`/services/${type}/projectform`);
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-100 to-purple-200 flex items-center justify-center px-4">
+     <div className="relative h-[680px] w-full">
+          {/* ✅ Background Image */}
+          <Image
+            src="/assets/Homepage.jpg"
+            alt="homepage picture"
+            className="object-cover z-0"
+            fill
+            priority
+          />
+    
+          {/* ✅ Page Content */}
+          <div className="absolute inset-0 z-10 flex items-start justify-start pt-12 px-6 lg:px-24">
+   
       <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-xl w-full">
         <h1 className="text-2xl md:text-3xl text-blue-900 font-bold mb-2">
           Kindly provide your business postal code
@@ -57,7 +72,7 @@ export default function Adressform() {
           />
           <button
             onClick={handleSearch}
-            className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition"
+            className="bg-blue-900 hover:bg-pink-500 text-white px-4 py-2 rounded-lg transition"
           >
             {loading ? 'Searching...' : 'Search'}
           </button>
@@ -68,12 +83,33 @@ export default function Adressform() {
             <li
               key={i}
               onClick={() => handleSelect(item.address)}
-              className="p-3 border-b cursor-pointer hover:bg-blue-100"
-            >
-              {item.address}
+              className="flex justify-between items-center p-3 hover:bg-pink-100 cursor-pointer">
+      <span>{item.address}</span>
+      <button
+        onClick={() => handleSelect(item.address)}
+        className="ml-4 bg-blue-900 rounded-full p-2 text-white text-sm hover:bg-pink-500 cursor-pointer"
+        aria-label={`Select address ${item.address}`}
+      >
+        <FaArrowRightLong/>
+      </button>
             </li>
           ))}
+
+          {suggestions.length > 0 && (
+            <li
+    onClick={() => router.push(`/services/${type}/manualaddress`)}
+    className="flex justify-between items-center p-3 hover:bg-pink-100 cursor-pointer"
+  >
+    <span>My address is not listed</span>
+    <span className="ml-4 bg-blue-900 rounded-full p-2 text-white text-sm hover:bg-pink-500">
+      <FaArrowRightLong />
+    </span>
+  </li>
+          )}
         </ul>
+        <p onClick={handleNext} className=" py-2 cursor-pointer flex items-end justify-end text-blue-900 hover:text-pink-500 ">
+          or enter address manually
+        </p>
 
         {selectedAddress && (
           <div className="mt-6">
@@ -83,13 +119,14 @@ export default function Adressform() {
             </p>
             <button
               onClick={handleNext}
-              className="w-full bg-purple-700 text-white py-3 rounded-lg text-lg hover:bg-purple-800 transition"
+              className="w-full bg-blue-900 text-white py-3 rounded-lg text-lg hover:bg-pink-500 transition"
             >
               Next
             </button>
           </div>
         )}
       </div>
-    </main>
+    </div>
+    </div>
   );
 }
