@@ -10,6 +10,10 @@ export default function EnergyType() {
     const handleBusinessnext = () => {
         if(type === "energy"  ){
             router.push("/services/energy/Energy")
+        } else if ( type === "broadband") {
+            router.push("/services/broadband/broadband")
+        } else if ( type === "water") {
+            router.push("/services/water/water")
         }
     }
 
@@ -27,7 +31,7 @@ export default function EnergyType() {
                 <Image
                     src="/assets/EnergyType.jpg"
                     alt="homepage picture"
-                    className=" object-fill z-0"
+                    className=" object-fill z-0 hidden md:block"
                     fill
                 />
 
@@ -50,10 +54,10 @@ export default function EnergyType() {
                     <div className=" w-full h-1 bg-gray-300 rounded-full"></div>
                     <p className=" text-xl ">Business or home — start smart with Nescol.</p>
                     <div className=" flex gap-10 ">
-                        <button onClick={handleBusinessnext} className=" bg-blue-900 hover:bg-pink-500 p-4  px-8 rounded-xl text-white">
+                        <button onClick={handleBusinessnext} className=" bg-blue-900 cursor-pointer hover:bg-pink-500 p-4  px-8 rounded-xl text-white">
                             Business
                             </button>
-                        <button onClick={handleHomenext} className=" bg-blue-900 hover:bg-pink-500  p-4 px-8 rounded-xl text-white">
+                        <button onClick={handleHomenext} className=" bg-blue-900 hover:bg-pink-500 cursor-pointer p-4 px-8 rounded-xl text-white">
                             Home
                             </button>
                     </div>    

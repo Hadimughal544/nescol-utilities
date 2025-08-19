@@ -11,7 +11,7 @@ export default function Energy() {
                     src="/assets/energy1.jpg"
                     alt="services background"
                     fill
-                    className="object-cover w-full h-full z-0 brightness-75 "
+                    className="object-cover w-full h-full z-0 brightness-75 hidden md:block "
                 />
 
                 <div className="absolute inset-0 bg-blue-950/00 z-10" />
@@ -23,15 +23,15 @@ export default function Energy() {
                         </h1>
 
                         <div className="flex gap-8">
-                            <Link href="/services/Electricity/firstform">
+                            <Link href="/services/Electricity/energy2">
                                 <Box title="Electricity" icon={<FaBolt />} />
                             </Link>
 
-                            <Link href="/services/gas/firstform">
+                            <Link href="/services/gas/energy2">
                                 <Box title="Gas" icon={<FaFire />} />
                             </Link>
 
-                            <Link href="/services/electricity&Gas/firstform">
+                            <Link href="/services/electricity-Gas/energy2">
                                 <Box
                                     title="Electricity & Gas"
                                     icon={

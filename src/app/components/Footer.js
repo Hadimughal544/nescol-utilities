@@ -88,11 +88,16 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-300 w-full"></div>
+        <div className="border-t border-gray-400 w-full"></div>
 
         {/* Bottom Text */}
-        <div className="text-center py-6 text-xs md:text-sm text-gray-500">
-          © NEIL & NESCOL LTD T/A Nescol Utilities. All rights reserved.
+        <div className="text-left py-6 text-sm md:text-md text-gray-400">
+          © NEIL & NESCOL LTD T/A Nescol Utilities 
+All rights reserved.<br></br>NEIL & NESCOL LTD is a registered company in Scotland 
+(SC679848). <br></br>
+Registered Address: 
+33 Main Street, Blackridge, Bathgate, Scotland, EH48 3RJ 
+Proudly made in Scotland, UK.
         </div>
       </div>
     </footer>

@@ -4,10 +4,15 @@ import LogoSwiper from "./components/swiper";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { AiOutlinePound } from "react-icons/ai";
 import { IoWalletOutline } from "react-icons/io5";
+import FloatingButton from './components/FloatingButton';
+import SustainabilitySection from "./components/SustainabilitySection";
 
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Image from "next/image";
+import SuccessAlert from "./components/SuccessAlert";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,39 +40,41 @@ export default function RootLayout({ children }) {
         <main className="bg-white">
           {children}
 
-          {/* Sustainability Section */}
-          <section className="bg-white py-12 px-4 sm:px-6 rounded-3xl text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8">
-              Sustainability starts with smarter savings.
-            </h2>
+          <SustainabilitySection/>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto text-left">
-              {/* Card 1 */}
-              <div className="flex flex-col justify-center items-center gap-8 bg-white p-6 rounded-xl shadow-md">
-                <h3 className="font-bold text-lg mb-2">Energy Insights</h3>
-                <div className="text-7xl text-black mb-4"><BsGraphUpArrow /></div>
-                <p className="text-center max-w-[250px]">
-                  Understand your consumption to make informed choices.
-                </p>
-              </div>
+          <section className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto py-16 px-4">
+            <div className="flex-[1.5] relative h-[350px]">
+  <Image
+    src="/assets/business.jpg"
+    alt="Business energy"
+    fill
+    className="rounded-xl object-cover"
+  />
+</div>
 
-              {/* Card 2 */}
-              <div className="flex flex-col justify-center items-center gap-8 bg-white p-6 rounded-xl shadow-md">
-                <h3 className="font-bold text-lg mb-2">Pay What’s Fair</h3>
-                <div className="text-7xl text-black mb-4"><AiOutlinePound /></div>
-                <p className="text-center max-w-[250px]">
-                  Pay based on your actual usage—skip random market spikes and inflated rates.
-                </p>
-              </div>
 
-              {/* Card 3 */}
-              <div className="flex flex-col justify-center items-center gap-8 bg-white p-6 rounded-xl shadow-md">
-                <h3 className="font-bold text-lg mb-2">Save Smarter</h3>
-                <div className="text-7xl text-black mb-4"><IoWalletOutline /></div>
-                <p className="text-center max-w-[250px]">
-                  Save your money with energy pricing that enhance your lifestyle.
-                </p>
-              </div>
+            <div className=" flex-1 text-left">
+              <h2 className=" text-2xl font-bold mb-2">
+                Simplify your business billing and start saving today with Nescol Utilities.
+              </h2>
+
+              <p className="mb-2">
+                 Why stay loyal to one supplier when your business deserves better?
+              </p>
+
+               <p className="mb-2">
+          At Nescol Utilities, we help you manage energy, broadband, and more smarter, not harder.
+              </p>
+
+              <p className="mb-2">
+          Business contracts are complex, with tailored rates and no cooling-off period. Sticking with one supplier could mean overpaying.
+          </p>
+        <p>
+          We make it easy to compare, customize, and lock in competitive deals that fit your needs. Whether you are a startup or scaling up, we keep your bills efficient, intelligent, and profitable.
+        </p>
+
+
+
             </div>
           </section>
 
@@ -75,12 +82,13 @@ export default function RootLayout({ children }) {
           <section className="mt-5 mb-5 bg-gray-100">
             <div className="flex items-center justify-center pt-8 pb-4 px-4 text-center">
               <h1 className="text-xl sm:text-2xl font-semibold">
-                Trusted suppliers. Reliable service. Just what you deserve.
+                We connect you with vetted suppliers for reliable service.
               </h1>
             </div>
             <LogoSwiper />
           </section>
         </main>
+        <FloatingButton/>
         <Footer />
       </body>
     </html>

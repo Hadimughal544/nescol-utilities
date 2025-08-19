@@ -14,10 +14,10 @@ export default function Services() {
 
             <div className="relative w-full h-[400px] md:h-[450px] lg:h-[500px]">
                 <Image
-            src="/assets/services.jpg"
+            src="/assets/services1.jpg"
             alt="services background"
             fill
-            className=" object-cover w-full h-full z-0  brightness-75"
+            className=" object-cover w-full h-full z-0  brightness-85 hidden md:block"
             />
 
             <div className="absolute inset-0 bg-blue-950/40 z-10" />
@@ -43,19 +43,19 @@ export default function Services() {
             <Link href={`/services/water/energytype`}>
             <Box  icon={<FaTint />} label="Water" text="Reliable suppliers, sustainable solutions."/>
             </Link>
-            <Link href="/services/POS/firstform">
+            <Link href="/services/payment-solution/firstform">
             <Box icon={<AiOutlinePound />} label="Payment Solution" text="Easy, efficient disposal services"/>
             </Link>
-            <Link href="/services/Graphics/firstform">
+            <Link href="/services/Graphics/addressform">
             <Box icon={<FaPaintBrush />} label="Graphics Designing" text="Visuals that speak louder than words."/>
             </Link>
-            <Link href="/services/web-development/firstform">
+            <Link href="/services/web-development/addressform">
             <Box icon={<TbWorldWww />} label="Web Development" text="Crafted for you—efficient, effective, essential."/>
             </Link>
-            <Link href="/services/SEO/firstform">
+            <Link href="/services/SEO/addressform">
             <Box icon={<FaArrowTrendUp />} label="SEO"  text="Boost your visibility, Rankings that rise."/>
             </Link>
-            <Link href="/services/app-development/firstform">
+            <Link href="/services/app-development/addressform">
             <Box icon={<TbDeviceMobileCode />} label="APP development"  text="Your idea, our execution, Your app, your way."/>
             </Link>
             </div>       

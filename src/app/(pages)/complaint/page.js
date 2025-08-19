@@ -14,7 +14,7 @@ export default function Complaint() {
         src="/assets/complaint.jpg"
         alt="Hero"
         fill
-        className="object-cover w-full h-full z-0  brightness-75"
+        className="object-cover w-full h-full z-0  brightness-75 hidden md:block"
         priority
       />
 
@@ -44,7 +44,7 @@ export default function Complaint() {
       <section>
     <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue-900">Submitting a Complaint</h2>
     <p className="mb-2">The quickest way to raise a concern is by emailing us at <a href="mailto:support@nescolutilities.co.uk" className="text-pink-600 underline">support@nescolutilities.co.uk</a>.</p>
-    <p>If you prefer writing to us, you can send your letter to our postal address — but contacting us via phone or live chat is generally faster.</p>
+    <p>If you prefer writing to us, you can send your letter to our postal address — but contacting us via phone is generally faster.</p>
   </section>
 
 

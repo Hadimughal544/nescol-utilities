@@ -12,7 +12,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const textToCopy = '07482 430256';
+  const textToCopy = '0141 5360396';
 
   const handleCopy = async () => {
     try {
@@ -47,46 +47,25 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-20 items-center text-md font-bold ">
-          <div className=' flex gap-6 items-center text-md'>
-          <Link href={`/services/energy/energytype`} className="hover:text-pink-500 transition-colors">Energy</Link>
-          <Link href={`/services/broadband/energytype`} className="hover:text-pink-500 transition-colors">Broadband</Link>
+          <div className=' flex gap-2 items-center text-md'>
+          <Link href={`/services/energy/energytype`} className=" nav-link py-2 px-4 hover:text-pink-500 transition-colors">Energy</Link>
+          <Link href={`/services/broadband/energytype`} className=" nav-link py-2 px-4 hover:text-pink-500 transition-colors">Broadband</Link>
+          <Link href={`/Servicespage`} className=" nav-link py-2 px-4 hover:text-pink-500 transition-colors">Services</Link>
+          
 
-          {/* Services Dropdown */}
-          <div
-            className="relative group cursor-pointer"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <div className="flex items-center gap-1 hover:text-pink-500">
-              <Link href="/Servicespage">
-              <span>Services</span>
-              </Link>
-              <FaChevronDown size={12} />
-            </div>
-            {dropdownOpen && (
-              <ul className="absolute top-8 left-0 bg-white text-black w-48 rounded shadow-lg z-10">
-                <li><Link href="/energy" className="block px-4 py-2 hover:bg-gray-100">Energy</Link></li>
-                <li><Link href="/Water" className="block px-4 py-2 hover:bg-gray-100">Water</Link></li>
-                <li><Link href="/cardpayments" className="block px-4 py-2 hover:bg-gray-100">Card payments</Link></li>
-                <li><Link href="/cardpayments" className="block px-4 py-2 hover:bg-gray-100">IT Solutions</Link></li>
-                <li><Link href="/insurance" className="block px-4 py-2 hover:bg-gray-100">Insurance</Link></li>
-              </ul>
-            )}
-          </div>
-
-          <Link href="/about-us" className="hover:text-pink-500 transition-colors">About Us</Link>
-          <Link href="/complaint" className="hover:text-pink-500 transition-colors">Complaint</Link>
+          <Link href="/about-us" className=" nav-link py-2 px-4 hover:text-pink-500 transition-colors ">About Us</Link>
+          <Link href="/complaint" className=" nav-link py-2 px-4 hover:text-pink-500 transition-colors">Complaint</Link>
           </div>
 
           {/* Contact Info */}
           <div className="flex gap-1 items-end justify-center cursor-pointer" onClick={handleCopy}>
-            <div className='text-blue-900'>
-              <MdPhoneIphone size={55} />
+            <div className='text-blue-900 mb-1'>
+              <MdPhoneIphone size={45} />
             </div>
             <div className='flex flex-col'>
-              <h2 className="text-3xl text-pink-500">{textToCopy}</h2>
+              <h2 className="text-2xl text-pink-500">{textToCopy}</h2>
               <p className="text-blue-900 text-md">
-                {copied ? "Saved & Ready to Dial" : "Reach Out to Our Sales Team"}
+                {copied ? "Saved & Ready to Dial" : "Call our business line!"}
               </p>
             </div>
           </div>
@@ -105,7 +84,7 @@ export default function Header() {
           <div className="flex gap-2 items-center pt-2" onClick={handleCopy}>
             <MdPhoneIphone size={30} className="text-blue-900" />
             <div>
-              <h2 className="text-pink-500 text-lg">{textToCopy}</h2>
+              <h2 className="text-pink-500 text-md">{textToCopy}</h2>
               <p className="text-blue-900 text-sm">
                 {copied ? "Saved & Ready to Dial" : "Sales Team"}
               </p>

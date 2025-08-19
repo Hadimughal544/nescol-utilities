@@ -18,6 +18,13 @@ const logos = [
   "/assets/suppliers/supp11.png",
   "/assets/suppliers/supp12.png",
   "/assets/suppliers/sup13.png",
+  "/assets/suppliers/supp14.png",
+  "/assets/suppliers/supp15.png",
+  "/assets/suppliers/supp16.png",
+  "/assets/suppliers/supp17.png",
+  "/assets/suppliers/supp18.png",
+  "/assets/suppliers/supp19.png",
+  "/assets/suppliers/supp20.png",
 ];
 
 export default function LogoSwiper() {

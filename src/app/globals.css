@@ -5,6 +5,18 @@
   --foreground: #171717;
 }
 
+.nav-link {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  /* Shadow only on the right and bottom */
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

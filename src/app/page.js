@@ -3,7 +3,7 @@ import { FaBolt, FaWifi } from "react-icons/fa6";
 import { HiOutlineCurrencyPound } from "react-icons/hi";
 import { FaTint } from "react-icons/fa";
 import Link from "next/link";
-import FloatingButton from './components/FloatingButton';
+
 
 export default function Home() {
   return (
@@ -37,23 +37,25 @@ export default function Home() {
                 <Link href={`/services/energy/energytype`}>
                   <Service icon={<FaBolt />} label="Energy" text="Get the best electricity & gas rates." />
                 </Link>
+                <Link href="/services/payment-solution/payment-solution">
+                  <Service icon={<HiOutlineCurrencyPound />} label="Payment Solutions" text="Easy, efficient and disposal services" />
+                </Link>
+                
+              </div>
+              <div className="flex flex-col gap-6">
                 <Link href={`/services/broadband/energytype`}>
                   <Service icon={<FaWifi />} label="Broadband" text="Choose internet that meets your needs." />
                 </Link>
-              </div>
-              <div className="flex flex-col gap-6">
                 <Link href={`/services/water/energytype`}>
                   <Service icon={<FaTint />} label="Water" text="Reliable suppliers, sustainable solutions." />
                 </Link>
-                <Link href="/POS">
-                  <Service icon={<HiOutlineCurrencyPound />} label="Payment Solutions" text="Easy, efficient and disposal services" />
-                </Link>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-      <FloatingButton />
+      
     </div>
   );
 }
