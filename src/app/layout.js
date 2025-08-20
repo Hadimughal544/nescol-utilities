@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
           <section className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto py-16 px-4">
             <div className="flex-[1.5] relative h-[350px]">
   <Image
-    src="/assets/business.jpg"
+    src="/assets/business1.jpg"
     alt="Business energy"
     fill
     className="rounded-xl object-cover"
