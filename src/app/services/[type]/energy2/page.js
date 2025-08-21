@@ -152,7 +152,7 @@ export default function EnergyForm() {
     if (!validateStep()) return;
     setLoading(true);
     try {
-      const res = await fetch("https://nescolutilities.co.uk/api/energy", {
+      const res = await fetch("https://nescolutilities.co.uk/energy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
