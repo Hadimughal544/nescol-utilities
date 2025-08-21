@@ -202,7 +202,7 @@ const handleChange = (index, value, field = null) => {
     if(!validateStep()) return;  
     setLoading(true);
         try{
-           const res =  await fetch("http://nescolutilities.co.uk/api/paymentsolution", {
+           const res =  await fetch("https://nescolutilities.co.uk/api/paymentsolution", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
