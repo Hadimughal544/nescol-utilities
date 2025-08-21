@@ -229,7 +229,7 @@ const handleChange = (index, value, field = null) => {
     if (!validateStep()) return;
     setLoading(true);
         try{
-           const res =  await fetch("http://31.97.117.214:3001/broadband", {
+           const res =  await fetch("http://nescolutilities.co.uk/api/broadband", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -312,6 +312,7 @@ const handleChange = (index, value, field = null) => {
       <label className="block text-sm font-medium text-black mb-1">
         Who is your current broadband supplier *
       </label>
+      
       <select
   value={inputs[0]}
   onChange={(e) => handleChange(0, e.target.value)}
@@ -319,7 +320,7 @@ const handleChange = (index, value, field = null) => {
     errors.supplier ? 'border-red-500' : 'border-black text-black'
   }`}
 >
-  <option >Select supplier</option>
+  <option>Select supplier</option>
 
   <optgroup label="Major Providers">
     <option value="BT">BT</option>
