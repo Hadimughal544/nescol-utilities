@@ -218,7 +218,7 @@ const handleChange = (index, value, field = null) => {
      if (!validateStep()) return;
     setLoading(true);
         try{
-           const res =  await fetch("https://31.97.117.214:3001/water", {
+           const res =  await fetch("https://nescolutilities.co.uk/api/water", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
