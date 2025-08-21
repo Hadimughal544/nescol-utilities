@@ -152,7 +152,7 @@ export default function EnergyForm() {
     if (!validateStep()) return;
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3001/energy", {
+      const res = await fetch("http://31.97.117.214:3001/energy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
