@@ -80,7 +80,7 @@ export default function Home() {
 
 function Service({ icon, label, text }) {
   return (
-    <div className="group flex flex-row items-center bg-white border rounded-xl p-4 space-x-4 w-full hover:text-pink-500 cursor-pointer">
+    <div className="group flex flex-row items-center shadow-xl bg-white border rounded-xl p-4 space-x-4 w-full hover:text-pink-500 cursor-pointer">
       <div className="text-4xl md:text-5xl text-black group-hover:text-pink-500">
         {icon}
       </div>
