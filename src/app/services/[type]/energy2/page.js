@@ -205,7 +205,10 @@ export default function EnergyForm() {
   return (
     <div className="relative min-h-screen">
       <Image src="/assets/BGQ1.jpg" alt="background" fill className="object-cover z-0 hidden md:block" priority />
-      <div className=' flex gap-40 '>
+      <div className=' flex flex-col md:flex-row  gap-40 '>
+
+<div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
+
       <div>
 
         {showSuccess && (
@@ -214,444 +217,441 @@ export default function EnergyForm() {
 
         
       {/* Step 1 */}
-      {step === 1 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-start max-w-2xl pt-20 px-20">
-          <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-lg">
-            <h2 className="text-2xl font-extrabold mb-6 text-blue-900">
-              Help Us Understand Your Current Setup
-            </h2>
-            {inputs.map((value, index) => (
-              <AnimatePresence key={index}>
-                {index <= currentStep && (
-                  <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="mb-4">
-                    <label className="block text-sm font-medium text-black mb-1">{labels[index]}</label>
-                    {index === 0 ? (
-                      <select value={value} onChange={(e) => handleChange(index, e.target.value)} className="w-full p-3 border border-black text-black rounded-lg">
-                        <option value="">Select supplier</option>
-                        {electricitySuppliers.map((s) => (
-                          <option key={s} value={s}>{s}</option>
-                        ))}
-                      </select>
-                    ) : index === 1 ? (
-                      <div className="flex gap-4">
-                        <input type="number" placeholder="Bill (approx.)" value={inputs[1].bill} onChange={(e) => handleChange(1, e.target.value, 'bill')} className=" no-spinner w-1/2 p-3 border border-black text-black rounded-lg" />
-                        <input type="number" placeholder="EAC (approx.)" value={inputs[1].eac} onChange={(e) => handleChange(1, e.target.value, 'eac')} className=" no-spinner w-1/2 p-3 border border-black text-black rounded-lg" />
-                      </div>
-                    ) :  (
-                       <>
-                       {!isNewBusiness && (
-                          <input
-                                type="date"
-                                value={value}
-                                onChange={(e) => handleChange(index, e.target.value)}
-                                className="w-full p-3 border border-black text-black rounded-lg"
-                         />
-                         )}
-                          {!isNewBusiness && errors.expiry_date && (
-                          <p className="text-red-500">{errors.expiry_date}</p>
-                           )}
-                          {/* Checkbox for new business */}
-                                <div className="mt-4 flex items-center">
-                          <input
-                                type="checkbox"
-                                id="newBusiness"
-                                checked={isNewBusiness}
-                                onChange={(e) => setIsNewBusiness(e.target.checked)}
-                                className="mr-2 h-4 w-4 text-blue-900 focus:ring-blue-900 border-gray-300 rounded"
-                         />
-                         <label htmlFor="newBusiness" className="text-sm text-black">
-                          This is a new business
-                           </label>
-                     </div>
-                         </>
-                    )}
-                    {errors.supplier && index === 0 && <p className="text-red-500">{errors.supplier}</p>}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            ))}
-            <button onClick={handleNext} className=" hover:bg-pink-500 cursor-pointer w-full mt-4 bg-blue-900 text-white py-3 rounded-lg">Next</button>
-          </div>
-        </div>
-      )}
+{step === 1 && (
+  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-20 pt-10 sm:pt-20">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full max-w-lg">
+      <h2 className="text-2xl font-extrabold mb-6 text-blue-900">
+        Help Us Understand Your Current Setup
+      </h2>
+      {inputs.map((value, index) => (
+        <AnimatePresence key={index}>
+          {index <= currentStep && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="mb-4"
+            >
+              <label className="block text-sm font-medium text-black mb-1">{labels[index]}</label>
+              {index === 0 ? (
+                <select
+                  value={value}
+                  onChange={(e) => handleChange(index, e.target.value)}
+                  className="w-full p-3 border border-black text-black rounded-lg"
+                >
+                  <option value="">Select supplier</option>
+                  {electricitySuppliers.map((s) => (
+                    <option key={s} value={s}>{s}</option>
+                  ))}
+                </select>
+              ) : index === 1 ? (
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <input
+                    type="number"
+                    placeholder="Bill (approx.)"
+                    value={inputs[1].bill}
+                    onChange={(e) => handleChange(1, e.target.value, 'bill')}
+                    className="no-spinner w-full sm:w-1/2 p-3 border border-black text-black rounded-lg"
+                  />
+                  <input
+                    type="number"
+                    placeholder="EAC (approx.)"
+                    value={inputs[1].eac}
+                    onChange={(e) => handleChange(1, e.target.value, 'eac')}
+                    className="no-spinner w-full sm:w-1/2 p-3 border border-black text-black rounded-lg"
+                  />
+                </div>
+              ) : (
+                <>
+                  {!isNewBusiness && (
+                    <input
+                      type="date"
+                      value={value}
+                      onChange={(e) => handleChange(index, e.target.value)}
+                      className="w-full p-3 border border-black text-black rounded-lg"
+                    />
+                  )}
+                  {!isNewBusiness && errors.expiry_date && (
+                    <p className="text-red-500">{errors.expiry_date}</p>
+                  )}
+                  {/* Checkbox for new business */}
+                  <div className="mt-4 flex items-center">
+                    <input
+                      type="checkbox"
+                      id="newBusiness"
+                      checked={isNewBusiness}
+                      onChange={(e) => setIsNewBusiness(e.target.checked)}
+                      className="mr-2 h-4 w-4 text-blue-900 focus:ring-blue-900 border-gray-300 rounded"
+                    />
+                    <label htmlFor="newBusiness" className="text-sm text-black">
+                      This is a new business
+                    </label>
+                  </div>
+                </>
+              )}
+              {errors.supplier && index === 0 && <p className="text-red-500">{errors.supplier}</p>}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      ))}
+      <button
+        onClick={handleNext}
+        className="hover:bg-pink-500 cursor-pointer w-full mt-4 bg-blue-900 text-white py-3 rounded-lg"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+)}
+
 
       {/* Step 2 */}
-      {step === 2 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-start max-w-2xl pt-20 px-20">
-          <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-xl w-full">
-            <h1 className="text-2xl md:text-3xl text-blue-900 font-bold mb-2">
-              Kindly provide your business postal code
-            </h1>
-            <h3 className="text-md md:text-lg text-black font-medium mb-6">
-              Sharing your location allows us to tailor savings just for you.
-            </h3>
+{step === 2 && (
+  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12 pt-10 sm:pt-20">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full max-w-xl">
+      <h1 className="text-2xl sm:text-3xl md:text-3xl text-blue-900 font-bold mb-2">
+        Kindly provide your business postal code
+      </h1>
+      <h3 className="text-sm sm:text-md md:text-lg text-black font-medium mb-6">
+        Sharing your location allows us to tailor savings just for you.
+      </h3>
 
-            <div className="flex flex-col gap-2 mb-4">
-              <div className="flex gap-2">
-                <input
-                  value={postcode}
-                  onChange={(e) => setPostcode(e.target.value)}
-                  placeholder="Enter your postcode"
-                  className="flex-1 px-4 py-2 border border-black bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800"
-                />
-                <button
-                  onClick={handleSearch}
-                  className="bg-blue-900 hover:bg-pink-500 text-white px-4 py-2 rounded-lg transition cursor-pointer"
-                >
-                  {loading ? 'Searching...' : 'Search'}
-                </button>
-              </div>
-              {postcodeError && (
-                <p className="text-red-600 text-sm">{postcodeError}</p>
-              )}
-            </div>
-
-            <ul className="border rounded-lg bg-white max-h-60 overflow-y-auto">
-              {suggestions.map((item, i) => (
-                <li
-                  key={i}
-                  onClick={() => handleSelect(item.address)}
-                  className="flex justify-between items-center p-3 hover:bg-pink-100 cursor-pointer"
-                >
-                  <span>{item.address}</span>
-                  <span className="ml-4 bg-blue-900 rounded-full p-2 text-white text-sm hover:bg-pink-500">
-                    <FaArrowRightLong />
-                  </span>
-                </li>
-              ))}
-              {suggestions.length > 0 && (
-                <li
-                  onClick= {() => handleAddressChoice(true)}
-                  className="flex justify-between items-center p-3 hover:bg-pink-100 cursor-pointer"
-                >
-                  <span>My address is not listed</span>
-                  <span className="ml-4 bg-blue-900 rounded-full p-2 text-white text-sm hover:bg-pink-500">
-                    <FaArrowRightLong />
-                  </span>
-                </li>
-              )}
-            </ul>
-
-            <p
-              onClick = {() => handleAddressChoice(true)}
-              className="py-2 cursor-pointer flex items-end justify-start font-bold text-blue-900 hover:text-pink-500"
-            >
-              Enter address manually
-            </p>
-
-            {selectedAddress && (
-              <div className="mt-6">
-                <h4 className="text-lg font-semibold text-green-700 mb-2">Selected Address:</h4>
-                <p className="bg-gray-100 p-3 rounded border border-gray-300 mb-4">
-                  {selectedAddress}
-                </p>
-                <button
-                  onClick={handleNext}
-                  className="w-full bg-blue-900 text-white py-3 rounded-lg text-lg cursor-pointer hover:bg-pink-500 transition"
-                >
-                  Next
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      { step === 3 && (
-        <div className=" relative z-20 min-h-screen flex items-start justify-start w-2xl pt-20 px-20">
-    
-      <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
-        <h2 className="text-3xl font-bold mb-6 text-center text-blue-900">
-          Enter your business address 
-        </h2>
-
-        {/* Business Name */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-black mb-1">
-            What is your Business name
-            <span className="text-red-500 ml-1">*</span>
-          </label>
+      <div className="flex flex-col gap-2 mb-4">
+        <div className="flex flex-col sm:flex-row gap-2">
           <input
-            type="text"
-            placeholder="Full Business Name"
-            value={businessName}
-            onChange={(e) => setBusinessName(e.target.value)}
-            className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-              errors.businessName ? 'border-red-500' : 'border-black text-black'
-            }`}
-          />
-          {errors.businessName && (
-            <p className="text-red-500 text-sm mt-1">{errors.businessName}</p>
-          )}
-        </div>
-
-        {/* Address Line */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-black mb-1">
-            What is your address line 1
-            <span className="text-red-500 ml-1">*</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Address Line 1"
-            value={addressline}
-            onChange={(e) => setAddressline(e.target.value)}
-            className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-              errors.addressline ? 'border-red-500' : 'border-black text-black'
-            }`}
-          />
-          {errors.addressline && (
-            <p className="text-red-500 text-sm mt-1">{errors.addressline}</p>
-          )}
-        </div>
-
-        {/* Town/City */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-black mb-1">
-            Town/City
-            <span className="text-red-500 ml-1">*</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Your town or city"
-            value={town_city}
-            onChange={(e) => setTown_city(e.target.value)}
-            className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-              errors.town_city ? 'border-red-500' : 'border-black text-black'
-            }`}
-          />
-          {errors.town_city && (
-            <p className="text-red-500 text-sm mt-1">{errors.town_city}</p>
-          )}
-        </div>
-
-        {/* Postcode */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-black mb-1">
-            Enter your Postcode
-            <span className="text-red-500 ml-1">*</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Postcode"
             value={postcode}
             onChange={(e) => setPostcode(e.target.value)}
-            className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-              errors.postcode ? 'border-red-500' : 'border-black text-black'
-            }`}
+            placeholder="Enter your postcode"
+            className="flex-1 px-4 py-2 border border-black bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800"
           />
-          {errors.postcode && (
-            <p className="text-red-500 text-sm mt-1">{errors.postcode}</p>
-          )}
+          <button
+            onClick={handleSearch}
+            className="bg-blue-900 hover:bg-pink-500 text-white px-4 py-2 rounded-lg transition cursor-pointer"
+          >
+            {loading ? 'Searching...' : 'Search'}
+          </button>
         </div>
-
-        <button
-          onClick={handleNext}
-          className="w-full mt-4 bg-blue-900 hover:bg-pink-500 cursor-pointer text-white py-2 rounded-lg transition"
-        >
-          Next
-        </button>
+        {postcodeError && (
+          <p className="text-red-600 text-sm">{postcodeError}</p>
+        )}
       </div>
-    </div>
+
+      <ul className="border rounded-lg bg-white max-h-60 overflow-y-auto">
+        {suggestions.map((item, i) => (
+          <li
+            key={i}
+            onClick={() => handleSelect(item.address)}
+            className="flex justify-between items-center p-3 hover:bg-pink-100 cursor-pointer"
+          >
+            <span>{item.address}</span>
+            <span className="ml-4 bg-blue-900 rounded-full p-2 text-white text-sm hover:bg-pink-500">
+              <FaArrowRightLong />
+            </span>
+          </li>
+        ))}
+        {suggestions.length > 0 && (
+          <li
+            onClick={() => handleAddressChoice(true)}
+            className="flex justify-between items-center p-3 hover:bg-pink-100 cursor-pointer"
+          >
+            <span>My address is not listed</span>
+            <span className="ml-4 bg-blue-900 rounded-full p-2 text-white text-sm hover:bg-pink-500">
+              <FaArrowRightLong />
+            </span>
+          </li>
+        )}
+      </ul>
+
+      <p
+        onClick={() => handleAddressChoice(true)}
+        className="py-2 cursor-pointer flex items-end justify-start font-bold text-blue-900 hover:text-pink-500"
+      >
+        Enter address manually
+      </p>
+
+      {selectedAddress && (
+        <div className="mt-6">
+          <h4 className="text-lg font-semibold text-green-700 mb-2">Selected Address:</h4>
+          <p className="bg-gray-100 p-3 rounded border border-gray-300 mb-4">
+            {selectedAddress}
+          </p>
+          <button
+            onClick={handleNext}
+            className="w-full bg-blue-900 text-white py-3 rounded-lg text-lg cursor-pointer hover:bg-pink-500 transition"
+          >
+            Next
+          </button>
+        </div>
       )}
+    </div>
+  </div>
+)}
 
-      { step === 4 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-start w-2xl pt-20 px-20">
-      <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
-        <h2 className="text-xl font-bold mb-6 text-center text-blue-900">
-          You are almost there! Just a few more details so we can help you unlock your savings.
-        </h2>
 
-        {/* Business Name */}
+      {step === 3 && (
+  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-28 pt-10 sm:pt-20">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full max-w-md">
+      <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-6 text-center text-blue-900">
+        Enter your business address
+      </h2>
+
+      {/* Business Name */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-black mb-1">
+          What is your Business name
+          <span className="text-red-500 ml-1">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Full Business Name"
+          value={businessName}
+          onChange={(e) => setBusinessName(e.target.value)}
+          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+            errors.businessName ? 'border-red-500' : 'border-black text-black'
+          }`}
+        />
+        {errors.businessName && (
+          <p className="text-red-500 text-sm mt-1">{errors.businessName}</p>
+        )}
+      </div>
+
+      {/* Address Line */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-black mb-1">
+          What is your address line 1
+          <span className="text-red-500 ml-1">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Address Line 1"
+          value={addressline}
+          onChange={(e) => setAddressline(e.target.value)}
+          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+            errors.addressline ? 'border-red-500' : 'border-black text-black'
+          }`}
+        />
+        {errors.addressline && (
+          <p className="text-red-500 text-sm mt-1">{errors.addressline}</p>
+        )}
+      </div>
+
+      {/* Town/City */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-black mb-1">
+          Town/City
+          <span className="text-red-500 ml-1">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Your town or city"
+          value={town_city}
+          onChange={(e) => setTown_city(e.target.value)}
+          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+            errors.town_city ? 'border-red-500' : 'border-black text-black'
+          }`}
+        />
+        {errors.town_city && (
+          <p className="text-red-500 text-sm mt-1">{errors.town_city}</p>
+        )}
+      </div>
+
+      {/* Postcode */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-black mb-1">
+          Enter your Postcode
+          <span className="text-red-500 ml-1">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Postcode"
+          value={postcode}
+          onChange={(e) => setPostcode(e.target.value)}
+          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+            errors.postcode ? 'border-red-500' : 'border-black text-black'
+          }`}
+        />
+        {errors.postcode && (
+          <p className="text-red-500 text-sm mt-1">{errors.postcode}</p>
+        )}
+      </div>
+
+      <button
+        onClick={handleNext}
+        className="w-full mt-4 bg-blue-900 hover:bg-pink-500 cursor-pointer text-white py-3 rounded-lg transition"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+)}
+
+
+     {step === 4 && (
+  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-30 pt-10 sm:pt-20">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full max-w-md">
+      <h2 className="text-lg sm:text-xl md:text-xl font-bold mb-6 text-center text-blue-900">
+        You are almost there! Just a few more details so we can help you unlock your savings.
+      </h2>
+
+      {/* Business Name */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-black mb-1">
+          What is your Business name?
+          <span className="text-red-500 ml-1">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Full Business Name"
+          value={businessName}
+          onChange={(e) => setBusinessName(e.target.value)}
+          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+            errors.businessName ? 'border-red-500' : 'border-black text-black'
+          }`}
+        />
+        {errors.businessName && (
+          <p className="text-red-500 text-sm mt-1">{errors.businessName}</p>
+        )}
+      </div>
+
+      {/* Contact Name */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-black mb-1">
+          What is your Contact name?
+          <span className="text-red-500 ml-1">*</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Full Name"
+          value={contactName}
+          onChange={(e) => setContactName(e.target.value)}
+          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+            errors.contactName ? 'border-red-500' : 'border-black text-black'
+          }`}
+        />
+        {errors.contactName && (
+          <p className="text-red-500 text-sm mt-1">{errors.contactName}</p>
+        )}
+      </div>
+
+      {/* Mobile Number */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-black mb-1">
+          What is your Mobile number?
+          <span className="text-red-500 ml-1">*</span>
+        </label>
+        <input
+          type="number"
+          placeholder="Enter a valid 11-digit number"
+          value={mobileNumber}
+          onChange={(e) => setMobileNumber(e.target.value)}
+          className={`no-spinner w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+            errors.mobileNumber ? 'border-red-500' : 'border-black text-black'
+          }`}
+        />
+        {errors.mobileNumber && (
+          <p className="text-red-500 text-sm mt-1">{errors.mobileNumber}</p>
+        )}
+      </div>
+
+      {/* Email */}
+      <div className="mb-4">
+        <label className="block text-sm font-medium text-black mb-1">
+          What is your Email address?
+          <span className="text-red-500 ml-1">*</span>
+        </label>
+        <input
+          type="email"
+          placeholder="Use a valid email (e.g., you@example.com)"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+            errors.email ? 'border-red-500' : 'border-black text-black'
+          }`}
+        />
+        {errors.email && (
+          <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+        )}
+      </div>
+
+      {/* MPAN - Electricity */}
+      {type?.toLowerCase() === 'electricity' && (
         <div className="mb-4">
           <label className="block text-sm font-medium text-black mb-1">
-            What is your Business name?
-            <span className="text-red-500 ml-1">*</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Full Business Name"
-            value={businessName}
-            onChange={(e) => setBusinessName(e.target.value)}
-            className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-              errors.businessName ? 'border-red-500' : 'border-black text-black'
-            }`}
-          />
-          {errors.businessName && (
-            <p className="text-red-500 text-sm mt-1">{errors.businessName}</p>
-          )}
-        </div>
-
-        {/* Contact Name */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-black mb-1">
-            What is your Contact name?
-            <span className="text-red-500 ml-1">*</span>
-          </label>
-          <input
-            type="text"
-            placeholder="Full Name"
-            value={contactName}
-            onChange={(e) => setContactName(e.target.value)}
-            className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-              errors.contactName ? 'border-red-500' : 'border-black text-black'
-            }`}
-          />
-          {errors.contactName && (
-            <p className="text-red-500 text-sm mt-1">{errors.contactName}</p>
-          )}
-        </div>
-
-        {/* Mobile Number */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-black mb-1">
-            What is your Mobile number?
+            What is your MPAN?
             <span className="text-red-500 ml-1">*</span>
           </label>
           <input
             type="number"
-            placeholder="Enter a valid 11-digit number"
-            value={mobileNumber}
-            onChange={(e) => setMobileNumber(e.target.value)}
-            className={` no-spinner w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-              errors.mobileNumber ? 'border-red-500' : 'border-black text-black'
+            placeholder="Enter valid 13 or 21 digits MPAN."
+            value={mpan}
+            onChange={(e) => setMpan(e.target.value)}
+            className={`no-spinner w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+              errors.mpan ? 'border-red-500' : 'border-black text-black'
             }`}
           />
-          {errors.mobileNumber && (
-            <p className="text-red-500 text-sm mt-1">{errors.mobileNumber}</p>
+          {errors.mpan && (
+            <p className="text-red-500 text-sm mt-1">{errors.mpan}</p>
           )}
         </div>
+      )}
 
-        {/* Email */}
+      {/* MPRN - Gas */}
+      {type?.toLowerCase() === 'gas' && (
         <div className="mb-4">
           <label className="block text-sm font-medium text-black mb-1">
-            What is your Email address?
+            What is your MPRN?
             <span className="text-red-500 ml-1">*</span>
           </label>
           <input
-            type="email"
-            placeholder="Use a valid email (e.g., you@example.com)"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-              errors.email ? 'border-red-500' : 'border-black text-black'
+            type="number"
+            placeholder="Enter valid 10-digit MPRN"
+            value={mprn}
+            onChange={(e) => setMprn(e.target.value)}
+            className={`no-spinner w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+              errors.mprn ? 'border-red-500' : 'border-black text-black'
             }`}
           />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+          {errors.mprn && (
+            <p className="text-red-500 text-sm mt-1">{errors.mprn}</p>
           )}
         </div>
-
-        {/* MPAN - if electricity */}
-        {type?.toLowerCase() === 'electricity' && (
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-black mb-1">
-              What is your MPAN?
-              <span className="text-red-500 ml-1">*</span>
-            </label>
-            <input
-              type="number"
-              placeholder="Enter valid 13 or 21 digits MPAN."
-              value={mpan}
-              onChange={(e) => setMpan(e.target.value)}
-              className={` no-spinner w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-                errors.mpan ? ' no-spinner border-red-500' : 'border-black text-black'
-              }`}
-            />
-            {errors.mpan && (
-              <p className="text-red-500 text-sm mt-1">{errors.mpan}</p>
-            )}
-          </div>
-        )}
-
-        {/* MPRN - if gas */}
-        {type?.toLowerCase() === 'gas' && (
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-black mb-1">
-              What is your MPRN?
-              <span className="text-red-500 ml-1">*</span>
-            </label>
-            <input
-              type="number"
-              placeholder="Enter valid 10-digit MPRN"
-              value={mprn}
-              onChange={(e) => setMprn(e.target.value)}
-              className={` no-spinner w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-                errors.mprn ? 'border-red-500' : 'border-black text-black'
-              }`}
-            />
-            {errors.mprn && (
-              <p className="text-red-500 text-sm mt-1">{errors.mprn}</p>
-            )}
-          </div>
-        )}
-
-        {/* Phone Number to transfer */}
-        {type?.toLowerCase() === 'broadband' && (
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-black mb-1">
-              Phone number to transfer (optional)
-              <span className="text-red-500 ml-1">*</span>
-            </label>
-            <input
-              type="number"
-              placeholder="Enter valid Phone number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              className={` no-spinner w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
-                errors.previousProvider ? 'border-red-500' : 'border-black text-black'
-              }`}
-            />
-            {errors.phoneNumber && (
-              <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
-            )}
-          </div>
-        )}
-
-
-       
-
-        <button
-  onClick={handleSubmit}
-  disabled={loading}
-  className="w-full mt-4 bg-blue-900 text-white py-2 rounded-lg hover:bg-pink-500 cursor-pointer transition flex items-center justify-center gap-2"
->
-  {loading && !showSuccess ? (
-    <>
-      <svg
-        className="animate-spin h-5 w-5 text-white"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <circle
-          className="opacity-25"
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          strokeWidth="4"
-        />
-        <path
-          className="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-        />
-      </svg>
-      <span>Submitting...</span>
-    </>
-  ) : showSuccess ? (
-    "Submitted ✅"
-  ) : (
-    "Submit"
-  )}
-</button>
-      </div>
-    </div>
       )}
+
+      {/* Phone Number - Broadband */}
+      {type?.toLowerCase() === 'broadband' && (
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-black mb-1">
+            Phone number to transfer (optional)
+          </label>
+          <input
+            type="number"
+            placeholder="Enter valid Phone number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            className={`no-spinner w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900 ${
+              errors.phoneNumber ? 'border-red-500' : 'border-black text-black'
+            }`}
+          />
+          {errors.phoneNumber && (
+            <p className="text-red-500 text-sm mt-1">{errors.phoneNumber}</p>
+          )}
+        </div>
+      )}
+
+      <button
+        onClick={handleNext}
+        className="w-full mt-4 bg-blue-900 hover:bg-pink-500 cursor-pointer text-white py-3 rounded-lg transition"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+)}
+
       </div>
 
-      <div className=' text-white relative z-20 min-h-screen pt-37 pl-30'>
+      <div className=' text-black md:text-white relative z-20 min-h-screen  pt-37 pl-30 hidden md:block'>
         <div className=' flex  px-20'>
           <motion.div
       initial={{ scale: 0.8, rotate: -10 }}
@@ -659,7 +659,7 @@ export default function EnergyForm() {
       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       className="text-6xl text-blue-600"
     >
-      <FaHandshake className=' text-white' size={100} />
+      <FaHandshake className=' text-black md:text-white ' size={100} />
     </motion.div>
         </div>
         <h2 className=' font-bold text-md mb-2  '>

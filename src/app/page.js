@@ -12,10 +12,13 @@ export default function Home() {
         <Image
           src="/assets/Homepage.jpg"
           alt="homepage picture"
-          className="object-cover z-0"
+          className="object-cover z-0 hidden md:block"
           fill
           priority
         />
+
+         {/* ✅ Pink background (only visible on small screens) */}
+  <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
 
         {/* Content */}
         <div className="relative z-20 flex flex-col justify-start h-full px-4 md:px-20">
@@ -80,7 +83,7 @@ export default function Home() {
 
 function Service({ icon, label, text }) {
   return (
-    <div className="group flex flex-row items-center shadow-xl bg-white border rounded-xl p-4 space-x-4 w-full hover:text-pink-500 cursor-pointer">
+    <div className="group flex flex-row items-center shadow-xl bg-white border rounded-xl h-20 sm:h-auto p-4 space-x-4 w-full hover:text-pink-500 cursor-pointer">
       <div className="text-4xl md:text-5xl text-black group-hover:text-pink-500">
         {icon}
       </div>

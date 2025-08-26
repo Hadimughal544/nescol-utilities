@@ -23,8 +23,8 @@ export default function EnergyType() {
   };
 
   return (
-    <main>
-      <div className="relative h-[600px] md:h-[700px] w-full">
+    <main  className="relative pb-20 md:pb-0">
+      <div className="relative h-[850px] md:h-[700px] w-full">
         {/* Background Image */}
         <Image
           src="/assets/EnergyType.jpg"
@@ -35,14 +35,14 @@ export default function EnergyType() {
         />
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 z-20 py-10 md:py-20 px-6 md:px-10 flex items-center">
+        <div className="absolute inset-0 z-20 py-10 md:py-20 px-10 md:px-10 flex  md:items-center ">
           <div className="space-y-6 w-full text-center md:text-left">
             {/* Headings */}
             <div className="flex flex-col gap-4">
               <h1 className="text-2xl sm:text-3xl md:text-5xl text-white font-bold">
                 Save More, Spend Smarter.
               </h1>
-              <h2 className="text-lg sm:text-xl md:text-2xl text-blue-950 font-bold">
+              <h2 className="text-lg sm:text-xl md:text-2xl text-blue-300 font-bold">
                 Unlock the most cost-effective utility solutions tailored{" "}
                 <br className="hidden md:block" /> for your business
               </h2>

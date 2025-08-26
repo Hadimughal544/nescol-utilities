@@ -229,7 +229,7 @@ const handleChange = (index, value, field = null) => {
     if (!validateStep()) return;
     setLoading(true);
         try{
-           const res =  await fetch("https://127.0.0.1:3001/api/broadband", {
+           const res =  await fetch("https://nescolutilities.co.uk/api/broadband", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

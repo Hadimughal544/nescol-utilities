@@ -5,8 +5,8 @@ import { FaFire } from "react-icons/fa";
 
 export default function Energy() {
   return (
-    <main>
-      <div className="relative w-full h-[300px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
+    <main className=" relative pb-10 md:p-0 ">
+      <div className="relative w-full h-[500px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
         {/* ✅ Background Image */}
         <Image
           src="/assets/energy1.jpg"
@@ -20,7 +20,7 @@ export default function Energy() {
         <div className="absolute inset-0 bg-blue-950/20 z-10" />
 
         {/* Content */}
-        <div className="absolute inset-0 z-20 flex items-start md:items-end justify-center md:justify-start px-10 md:px-10 pb-10 md:pb-10">
+        <div className="absolute inset-0 z-20 flex items-centre md:items-end justify-centre md:justify-start px-10 md:px-10 pb-10 md:pb-10 pt-5 md:pt-0">
           <div className="space-y-6 text-center md:text-left">
             <h1 className="text-xl sm:text-2xl md:text-3xl text-white font-bold">
               Which energy do you need?
@@ -61,7 +61,7 @@ function Box({ title, icon }) {
       className="group flex flex-col items-center justify-center 
                  w-full sm:w-40 md:w-48 h-28 sm:h-32 p-4 
                  bg-white hover:bg-gray-100 
-                 rounded-2xl shadow-lg cursor-pointer transition-all"
+                 rounded-2xl shadow-2xl md:shadow-lg cursor-pointer transition-all"
     >
       <div className="text-base sm:text-lg text-center group-hover:text-pink-500">
         {title}
