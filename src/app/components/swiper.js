@@ -29,28 +29,33 @@ const logos = [
 
 export default function LogoSwiper() {
   return (
-    <div className="bg-white px-2  rounded-xl  h-40">
+    <div className="bg-white px-2 rounded-xl h-40">
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 2000, disableOnInteraction: false }}
         loop={true}
-        slidesPerView={6}
+        spaceBetween={20}
         breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 4 },
-          1280: { slidesPerView: 4 },
+          320: { slidesPerView: 2 },   // small mobiles
+          640: { slidesPerView: 3 },   // bigger mobiles
+          768: { slidesPerView: 4 },   // tablets
+          1024: { slidesPerView: 5 },  // laptops
+          1280: { slidesPerView: 5 },  // desktops
         }}
         className="h-full bg-gray-100"
       >
         {logos.map((src, i) => (
-          <SwiperSlide key={i} className="flex items-center justify-center h-full">
+          <SwiperSlide
+            key={i}
+            className="flex items-center justify-center h-full"
+          >
             <div className="w-full h-full flex items-center justify-center">
               <Image
                 src={src}
                 alt={`Logo ${i + 1}`}
                 width={200}
                 height={110}
-                className="object-contain transition-all duration-300 hover:scale-105 "
+                className="object-contain transition-all duration-300 hover:scale-105"
               />
             </div>
           </SwiperSlide>

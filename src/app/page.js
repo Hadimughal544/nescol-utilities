@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { FaBolt, FaWifi } from "react-icons/fa6";
 import { HiOutlineCurrencyPound } from "react-icons/hi";
@@ -5,10 +6,13 @@ import { FaTint } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Home() {
+  
+
   return (
     <div>
+      {/* ✅ Hero Section */}
       <div className="relative h-[680px] w-full">
-        {/* ✅ Background Image */}
+        {/* Background Image */}
         <Image
           src="/assets/Homepage.jpg"
           alt="homepage picture"
@@ -16,9 +20,8 @@ export default function Home() {
           fill
           priority
         />
-
-         {/* ✅ Pink background (only visible on small screens) */}
-  <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
+        {/* Pink background for mobile */}
+        <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
 
         {/* Content */}
         <div className="relative z-20 flex flex-col justify-start h-full px-4 md:px-20">
@@ -35,7 +38,7 @@ export default function Home() {
               for your business.
             </p>
 
-            {/* Responsive grid */}
+            {/* Services Grid */}
             <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center md:place-items-start">
               <div className="flex flex-col gap-6 w-full items-center md:items-start">
                 <Link href={`/services/energy/energytype`} className="w-full max-w-xs">
@@ -77,6 +80,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
     </div>
   );
 }

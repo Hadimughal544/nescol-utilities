@@ -131,12 +131,16 @@ export default function EnergyForm() {
          } else if (!emailRegex.test(email.trim()) ) {
           newErrors.email = "Please a valid email address"
          }
+         if (type === "electricity") {
          if (mpan.trim().length !== 13 && mpan.trim().length !== 21) {
   newErrors.mpan = "Please enter a valid 13 or 21 digits mpan.";
 }
+}
+if(type === "gas") {
       if (mprn && !/^\d{10}$/.test(mprn.trim())) {
     newErrors.mprn = "Please enter a valid 10-digit MPRN.";
   }
+  } 
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -152,7 +156,7 @@ export default function EnergyForm() {
     if (!validateStep()) return;
     setLoading(true);
     try {
-      const res = await fetch("/api/energy", {
+      const res = await fetch("https://nescolutilities.co.uk/api/energy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -240,7 +244,7 @@ export default function EnergyForm() {
                   onChange={(e) => handleChange(index, e.target.value)}
                   className="w-full p-3 border border-black text-black rounded-lg"
                 >
-                  <option value="">Select supplier</option>
+                  <option >Select supplier</option>
                   {electricitySuppliers.map((s) => (
                     <option key={s} value={s}>{s}</option>
                   ))}
@@ -640,11 +644,40 @@ export default function EnergyForm() {
       )}
 
       <button
-        onClick={handleNext}
-        className="w-full mt-4 bg-blue-900 hover:bg-pink-500 cursor-pointer text-white py-3 rounded-lg transition"
+  onClick={handleSubmit}
+  disabled={loading}
+  className="w-full mt-4 bg-blue-900 text-white py-2 rounded-lg hover:bg-pink-500 cursor-pointer transition flex items-center justify-center gap-2"
+>
+  {loading && !showSuccess ? (
+    <>
+      <svg
+        className="animate-spin h-5 w-5 text-white"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
       >
-        Next
-      </button>
+        <circle
+          className="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth="4"
+        />
+        <path
+          className="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+        />
+      </svg>
+      <span>Submitting...</span>
+    </>
+  ) : showSuccess ? (
+    "Submitted ✅"
+  ) : (
+    "Submit"
+  )}
+</button>
     </div>
   </div>
 )}

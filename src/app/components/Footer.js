@@ -5,6 +5,7 @@ import { IoLogoLinkedin, IoLogoGoogle } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaPhone } from "react-icons/fa6";
 import { SiInstagram } from "react-icons/si";
+import TrustpilotWidget from "./TrustpilotWidget";
 
 export default function Footer() {
   return (
@@ -12,26 +13,33 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-10 pb-10">
           {/* Logo & Tagline */}
-          <div className="space-y-6 text-center md:text-left">
-            <div className="flex justify-center md:justify-start">
-              <Image
-                src="/assets/whitelogo.png"
-                alt="company logo"
-                width={250}
-                height={150}
-                className="object-contain"
-              />
-            </div>
-            <p className="text-md">
-              Let your business thrive — we bring the <br />
-              best deals to you.
-            </p>
-            <div className="flex justify-center md:justify-start gap-4 text-2xl text-pink-500">
-              <Link href="#"><IoLogoFacebook size={30} /></Link>
-              <Link href="#"><IoLogoLinkedin size={30} /></Link>
-              <Link href="#"><SiInstagram size={30} /></Link>
-            </div>
-          </div>
+          {/* Logo & Tagline */}
+<div className="space-y-6 text-center md:text-left">
+  <div className="flex justify-center md:justify-start">
+    <Image
+      src="/assets/whitelogo.png"
+      alt="company logo"
+      width={250}
+      height={150}
+      className="object-contain"
+    />
+  </div>
+
+  <p className="text-md">
+    Let your business thrive — we bring the <br />
+    best deals to you.
+  </p>
+
+  {/* Icons + Trustpilot stacked */}
+  {/* Icons + Trustpilot in same row */}
+<div className="flex items-center gap-4 text-2xl text-pink-500">
+  <Link href="#"><IoLogoFacebook size={30} /></Link>
+  <Link href="#"><IoLogoLinkedin size={30} /></Link>
+  <Link href="#"><SiInstagram size={30} /></Link>
+</div>
+  
+</div>
+
 
           {/* Navigation Links */}
           <div className="text-center md:text-left">
@@ -43,6 +51,9 @@ export default function Footer() {
               <li><Link href="/Servicespage" className="hover:underline">Services</Link></li>
               <li><Link href="/about-us" className="hover:underline">About Us</Link></li>
               <li><Link href="/complaint" className="hover:underline">Complaint</Link></li>
+               <div className="w-full flex justify-center md:justify-start">
+    <TrustpilotWidget />
+  </div>
             </ul>
           </div>
 
@@ -77,7 +88,7 @@ export default function Footer() {
                   <span className="text-pink-500 text-xl"><HiOutlineMail /></span>
                   <p>
                     Email:{" "}
-                    <a href="mailto:support@nescolutilities.co.uk" className="text-blue-400 hover:underline">
+                    <a href="mailto:support@nescolutilities.co.uk" className="text-blue-400  hover:underline">
                       support@nescolutilities.co.uk
                     </a>
                   </p>
@@ -97,7 +108,7 @@ All rights reserved.<br></br>NEIL & NESCOL LTD is a registered company in Scotla
 (SC679848). <br></br>
 Registered Address: 
 33 Main Street, Blackridge, Bathgate, Scotland, EH48 3RJ 
-Proudly made in Scotland, UK.
+<br></br>Proudly made in Scotland, UK.
         </div>
       </div>
     </footer>

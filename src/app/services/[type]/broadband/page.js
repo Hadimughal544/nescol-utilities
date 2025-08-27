@@ -291,6 +291,8 @@ const handleChange = (index, value, field = null) => {
         priority
       />
       <div className="flex gap-40 items-start">
+
+        <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
       <div>
 
         {showSuccess && (
@@ -387,25 +389,22 @@ const handleChange = (index, value, field = null) => {
 
       {/* Step 2 */}
       {step === 2 && (
-        <div className=" relative z-20 min-h-screen flex items-start justify-start 
-  max-w-full sm:max-w-xl md:max-w-2xl 
-  pt-10 sm:pt-16 md:pt-20 
-  px-4 sm:px-10 md:px-20">
+        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12 pt-10 sm:pt-20">
           <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-xl w-full">
-            <h1 className="text-2xl md:text-3xl text-blue-900 font-bold mb-2">
+            <h1 className="text-2xl sm:text-3xl md:text-3xl text-blue-900 font-bold mb-2">
               Kindly provide your business postal code
             </h1>
-            <h3 className="text-md md:text-lg text-black font-medium mb-6">
+            <h3 className="text-sm sm:text-md md:text-lg text-black font-medium mb-6">
               Sharing your location allows us to tailor savings just for you.
             </h3>
 
-            <div className="flex flex-col gap-2 mb-4">
-              <div className="flex gap-2">
+           <div className="flex flex-col gap-2 mb-4">
+        <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   value={postcode}
                   onChange={(e) => setPostcode(e.target.value)}
                   placeholder="Enter your postcode"
-                  className="flex-1 px-4 py-2 border border-black bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800"
+                   className="flex-1 px-4 py-2 border border-black bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-800"
                 />
                 <button
                   onClick={handleSearch}
@@ -419,7 +418,7 @@ const handleChange = (index, value, field = null) => {
               )}
             </div>
 
-            <ul className="border rounded-lg bg-white max-h-60 overflow-y-auto">
+           <ul className="border rounded-lg bg-white max-h-60 overflow-y-auto">
               {suggestions.map((item, i) => (
                 <li
                   key={i}
@@ -471,7 +470,7 @@ const handleChange = (index, value, field = null) => {
       )}
 
       { step === 3 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-start w-2xl pt-20 px-20">
+       <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-28 pt-10 sm:pt-20">
     
       <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
         <h2 className="text-3xl font-bold mb-6 text-center text-blue-900">
@@ -569,7 +568,7 @@ const handleChange = (index, value, field = null) => {
       )}
 
       { step === 4 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-start w-2xl pt-20 px-20">
+        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-30 pt-10 sm:pt-20">
       <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
         <h2 className="text-xl font-bold mb-6 text-center text-blue-900">
           You are almost there! Just a few more details so we can help you unlock your savings.
@@ -766,7 +765,7 @@ const handleChange = (index, value, field = null) => {
       </div>
       
       
-            <div className=' text-white relative z-20 min-h-screen pt-37 pl-30'>
+            <div className=' text-white relative z-20 min-h-screen pt-37 pl-30 hidden md:block'>
               <div className=' flex  px-20'>
                 <motion.div
             initial={{ scale: 0.8, rotate: -10 }}
