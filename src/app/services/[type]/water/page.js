@@ -274,7 +274,7 @@ const handleChange = (index, value, field = null) => {
   return (
     <div className="relative min-h-screen">
       <Image
-        src="/assets/BGQ1.jpg"
+        src="/assets/BGQ2.jpg"
         alt="background"
         fill
         className="object-cover z-0 hidden md:block"
@@ -747,7 +747,7 @@ const handleChange = (index, value, field = null) => {
       )}
       </div>
       
-            <div className=' text-white relative z-20 min-h-screen pt-37 pl-30 hidden md:block'>
+            <div className=' text-white relative z-20 min-h-screen pt-37 pl-30 hidden md:hidden lg:hidden'>
               <div className=' flex  px-20'>
                 <motion.div
             initial={{ scale: 0.8, rotate: -10 }}

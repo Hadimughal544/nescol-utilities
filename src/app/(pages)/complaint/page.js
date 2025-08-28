@@ -8,13 +8,13 @@ import { TbWorld } from "react-icons/tb";
 export default function Complaint() {
   return (
     <main>
-    <div className="relative w-full h-[300px] md:h-[350px] lg:h-[400px]">
+    <div className="relative w-full h-[450px] md:h-[350px] lg:h-[400px]">
       {/* Blurred Background Image */}
       <Image
         src="/assets/complaint.jpg"
         alt="Hero"
         fill
-        className="object-cover w-full h-full z-0  brightness-75 hidden md:block"
+        className="object-cover w-full h-full z-0  brightness-75 "
         priority
       />
 

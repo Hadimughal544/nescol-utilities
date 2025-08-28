@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import Image from "next/image";
 import SuccessAlert from "./components/SuccessAlert";
 import TrustpilotWidget from "./components/TrustpilotWidget";
+import ReviewSection from "./components/ReviewSection";
 
 
 const geistSans = Geist({
@@ -37,11 +38,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header />
-        <main className="bg-white">
+        
+        <main className="bg-white pt-[120px]">
+          <Header />
           {children}
 
           <SustainabilitySection/>
+
+          <div>
+              <ReviewSection/>
+            </div>
 
           <section className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto py-16 px-4">
             <div className="flex-[1.5] relative h-[350px]">
@@ -73,11 +79,10 @@ export default function RootLayout({ children }) {
         <p>
           We make it easy to compare, customize, and lock in competitive deals that fit your needs. Whether you are a startup or scaling up, we keep your bills efficient, intelligent, and profitable.
         </p>
-
-
-
             </div>
           </section>
+
+           
 
           {/* Supplier Logos */}
           <section className="mt-5 mb-5 bg-gray-100">

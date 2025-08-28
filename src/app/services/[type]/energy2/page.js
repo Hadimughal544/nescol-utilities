@@ -208,7 +208,7 @@ if(type === "gas") {
 
   return (
     <div className="relative min-h-screen">
-      <Image src="/assets/BGQ1.jpg" alt="background" fill className="object-cover z-0 hidden md:block" priority />
+      <Image src="/assets/BGQ2.jpg" alt="background" fill className="object-cover z-0 hidden md:block" priority />
       <div className=' flex flex-col md:flex-row  gap-40 '>
 
 <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
@@ -684,7 +684,7 @@ if(type === "gas") {
 
       </div>
 
-      <div className=' text-black md:text-white relative z-20 min-h-screen  pt-37 pl-30 hidden md:block'>
+      <div className=' text-black md:text-white relative z-20 min-h-screen  pt-37 pl-30 hidden md:hidden lg:hidden'>
         <div className=' flex  px-20'>
           <motion.div
       initial={{ scale: 0.8, rotate: -10 }}

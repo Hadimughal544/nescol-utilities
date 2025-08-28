@@ -51,9 +51,6 @@ export default function Footer() {
               <li><Link href="/Servicespage" className="hover:underline">Services</Link></li>
               <li><Link href="/about-us" className="hover:underline">About Us</Link></li>
               <li><Link href="/complaint" className="hover:underline">Complaint</Link></li>
-               <div className="w-full flex justify-center md:justify-start">
-    <TrustpilotWidget />
-  </div>
             </ul>
           </div>
 

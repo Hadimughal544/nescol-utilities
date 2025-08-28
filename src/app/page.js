@@ -9,9 +9,9 @@ export default function Home() {
   
 
   return (
-    <div>
+    <div className="">
       {/* ✅ Hero Section */}
-      <div className="relative h-[680px] w-full">
+      <div className="relative h-[680px] w-full ">
         {/* Background Image */}
         <Image
           src="/assets/Homepage.jpg"

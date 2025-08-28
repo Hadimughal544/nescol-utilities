@@ -4,12 +4,12 @@ export default function About() {
   return (
     <main className="text-black">
       {/* Hero Section */}
-      <div className="relative w-full h-[350px] md:h-[400px] lg:h-[450px]">
+      <div className="relative  w-full h-[450px] md:h-[400px] lg:h-[450px]">
         <Image
           src="/assets/aboutus.jpg"
           alt="about us image"
           fill
-          className="object-cover hidden md:block"
+          className="object-cover "
         />
         {/* Overlay */}
         <div className="absolute inset-0  bg-opacity-50 z-10" />
@@ -52,13 +52,9 @@ export default function About() {
         {/* Mission */}
         <Section title="Our Mission">
           <p>
-            Our mission is simple: <strong>to take the stress out of utilities.</strong> We do this by offering guidance you can trust,
+            Our mission is simple: <strong>to take the stress out of services.</strong> We do this by offering guidance you can trust,
             deals that work for you, and a support team that always picks up the phone.
           </p>
-        </Section>
-
-        {/* Vision */}
-        <Section title="Our Vision">cd 
           <p>
             We envision a future where switching providers, managing bills, and setting up new services are effortless for every household and business.
             At Nescol Utilities, we’re not just saving you money — we’re saving you time, worry, and energy.
