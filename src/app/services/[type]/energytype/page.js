@@ -24,10 +24,10 @@ export default function EnergyType() {
 
   return (
     <main  className="relative pb-20 md:pb-0">
-      <div className="relative h-[850px] md:h-[700px] w-full">
+      <div className="relative h-[850px] md:h-[750px] w-full">
         {/* Background Image */}
         <Image
-          src="/assets/EnergyType.jpg"
+          src="/assets/EnergyType1.jpg"
           alt="homepage picture"
           className="object-cover z-0"
           fill
@@ -35,7 +35,7 @@ export default function EnergyType() {
         />
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 z-20 py-10 md:py-20 px-10 md:px-10 flex  md:items-center ">
+        <div className="absolute inset-0 z-20 py-10 md:py-20 px-10 md:px-10 flex  md:items-center mt-5 ">
           <div className="space-y-6 w-full text-center md:text-left">
             {/* Headings */}
             <div className="flex flex-col gap-4">
@@ -48,7 +48,7 @@ export default function EnergyType() {
               </h2>
               <p className="text-sm sm:text-base md:text-md text-white leading-relaxed">
                 Nescol Utilities partners with trusted UK energy suppliers to
-                help you cut costs, reduce waste, and maximize your savings —
+                help you cut costs, reduce waste,<br></br> and maximize your savings
                 all through smart, hassle-free solutions.
               </p>
             </div>

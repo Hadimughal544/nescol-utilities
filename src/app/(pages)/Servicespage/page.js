@@ -46,16 +46,16 @@ export default function Services() {
             <Link href="/services/payment-solution/firstform">
             <Box icon={<AiOutlinePound />} label="Payment Solution" text="Easy, efficient disposal services"/>
             </Link>
-            <Link href="/services/Graphics/addressform">
+            <Link href="/services/Graphics/tech-services">
             <Box icon={<FaPaintBrush />} label="Graphics Designing" text="Visuals that speak louder than words."/>
             </Link>
-            <Link href="/services/web-development/addressform">
+            <Link href="/services/web-development/tech-services">
             <Box icon={<TbWorldWww />} label="Web Development" text="Crafted for you—efficient, effective, essential."/>
             </Link>
-            <Link href="/services/SEO/addressform">
+            <Link href="/services/SEO/tech-services">
             <Box icon={<FaArrowTrendUp />} label="SEO"  text="Boost your visibility, Rankings that rise."/>
             </Link>
-            <Link href="/services/app-development/addressform">
+            <Link href="/services/app-development/tech-services">
             <Box icon={<TbDeviceMobileCode />} label="APP development"  text="Your idea, our execution, Your app, your way."/>
             </Link>
             </div>       

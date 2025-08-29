@@ -156,7 +156,7 @@ if(type === "gas") {
     if (!validateStep()) return;
     setLoading(true);
     try {
-      const res = await fetch("https://nescolutilities.co.uk/api/energy", {
+      const res = await fetch("https://31.97.117.214:3001/api/energy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -207,8 +207,8 @@ if(type === "gas") {
 
 
   return (
-    <div className="relative min-h-screen">
-      <Image src="/assets/BGQ2.jpg" alt="background" fill className="object-cover z-0 hidden md:block" priority />
+    <div className="relative min-h-screen h-[850px] w-full ">
+      <Image src="/assets/BGQ3.jpg" alt="background" fill className="object-cover z-0 hidden md:block" priority />
       <div className=' flex flex-col md:flex-row  gap-40 '>
 
 <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
@@ -222,7 +222,7 @@ if(type === "gas") {
         
       {/* Step 1 */}
 {step === 1 && (
-  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-20 pt-10 sm:pt-20">
+  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-20  pt-40 md:pt-50 ">
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full max-w-lg">
       <h2 className="text-2xl font-extrabold mb-6 text-blue-900">
         Help Us Understand Your Current Setup
@@ -312,7 +312,7 @@ if(type === "gas") {
 
       {/* Step 2 */}
 {step === 2 && (
-  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12 pt-10 sm:pt-20">
+  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12  pt-40 md:pt-50 ">
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full max-w-xl">
       <h1 className="text-2xl sm:text-3xl md:text-3xl text-blue-900 font-bold mb-2">
         Kindly provide your business postal code
@@ -394,7 +394,7 @@ if(type === "gas") {
 
 
       {step === 3 && (
-  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-28 pt-10 sm:pt-20">
+  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-28  pt-40 md:pt-50 ">
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full max-w-md">
       <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-6 text-center text-blue-900">
         Enter your business address
@@ -492,7 +492,7 @@ if(type === "gas") {
 
 
      {step === 4 && (
-  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-30 pt-10 sm:pt-20">
+  <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-30  pt-40 md:pt-50 ">
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full max-w-md">
       <h2 className="text-lg sm:text-xl md:text-xl font-bold mb-6 text-center text-blue-900">
         You are almost there! Just a few more details so we can help you unlock your savings.

@@ -4,7 +4,7 @@ export default function About() {
   return (
     <main className="text-black">
       {/* Hero Section */}
-      <div className="relative  w-full h-[450px] md:h-[400px] lg:h-[450px]">
+      <div className="relative  w-full h-[450px] md:h-[400px] lg:h-[550px]">
         <Image
           src="/assets/aboutus.jpg"
           alt="about us image"

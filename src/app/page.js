@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <div className="">
       {/* ✅ Hero Section */}
-      <div className="relative h-[680px] w-full ">
+      <div className="relative h-[800px] w-full ">
         {/* Background Image */}
         <Image
-          src="/assets/Homepage.jpg"
+          src="/assets/Homepage2.jpg"
           alt="homepage picture"
           className="object-cover z-0 hidden md:block"
           fill
@@ -24,7 +24,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col justify-start h-full px-4 md:px-20">
+        <div className="relative z-20 flex flex-col justify-start h-full px-4 md:px-20 pt-30">
           <div className="text-white py-8 text-center md:text-left">
             <h1 className="text-2xl md:text-4xl font-extrabold mb-4">
               Explore Business Services.

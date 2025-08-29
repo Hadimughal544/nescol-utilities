@@ -80,13 +80,18 @@ export default function Header() {
           />
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-20 items-center text-md font-bold">
-            <div className="flex gap-10 items-center">
-              <Link href="/services/energy/energytype" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">Energy</Link>
-              <Link href="/services/broadband/energytype" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">Broadband</Link>
+          <nav className="hidden md:flex gap-10  items-center text-md font-bold">
+            <div className="flex gap-7 items-center">
+              <Link href="/services/energy/energytype" className="nav-link py-2 px-4  hover:text-pink-500 transition-colors">Energy</Link>
+              <span className="border-1 h-8 border-pink-500"></span>
+              <Link href="/services/broadband/energytype" className="nav-link py-2 px-4  hover:text-pink-500 transition-colors">Broadband</Link>
+              <span className="border-1 h-8 border-pink-500"></span>
               <Link href="/Servicespage" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">Services</Link>
-              <Link href="/about-us" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">About Us</Link>
-              <Link href="/complaint" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">Complaint</Link>
+              <span className="border-1 h-8 border-pink-500"></span>
+              <Link href="/about-us" className="nav-link py-2 hover:text-pink-500 px-4 transition-colors">About Us</Link>
+              <span className="border-1 h-8 border-pink-500"></span>
+              <Link href="/complaint" className="nav-link py-2 hover:text-pink-500 px-4 transition-colors">Complaint</Link>
+              <span className="border-1 h-8 border-pink-500"></span>
             </div>
 
             {/* Contact Info */}

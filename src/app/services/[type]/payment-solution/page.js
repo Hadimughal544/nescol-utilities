@@ -202,7 +202,7 @@ const handleChange = (index, value, field = null) => {
     if(!validateStep()) return;  
     setLoading(true);
         try{
-           const res =  await fetch("https://nescolutilities.co.uk/api/paymentsolution", {
+           const res =  await fetch("https://31.97.117.214:3001/api/paymentsolution", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -252,9 +252,9 @@ const handleChange = (index, value, field = null) => {
 
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen h-[850px] w-full ">
       <Image
-        src="/assets/BGQ2.jpg"
+        src="/assets/BGQ3.jpg"
         alt="background"
         fill
         className="object-cover z-0 hidden md:block"
@@ -272,7 +272,7 @@ const handleChange = (index, value, field = null) => {
 
       {/* Step 1 */}
       {step === 1 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-20 pt-10 sm:pt-20">
+        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-20 pt-40 md:pt-50 ">
           <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-lg backdrop-blur-md">
             <h2 className="text-2xl font-extrabold mb-6 text-blue-900">
               Help Us Understand Your Current Setup
@@ -348,7 +348,7 @@ const handleChange = (index, value, field = null) => {
 
       {/* Step 2 */}
       {step === 2 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12 pt-10 sm:pt-20">
+        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12 pt-40 md:pt-50 ">
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full max-w-xl">
       <h1 className="text-2xl sm:text-3xl md:text-3xl text-blue-900 font-bold mb-2">
               Kindly provide your business postal code
@@ -429,7 +429,7 @@ const handleChange = (index, value, field = null) => {
       )}
 
       { step === 3 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-28 pt-10 sm:pt-20">
+        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-28 pt-40 md:pt-50 ">
     
       <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
         <h2 className="text-3xl font-bold mb-6 text-center text-blue-900">
@@ -518,7 +518,7 @@ const handleChange = (index, value, field = null) => {
 
         <button
           onClick={handleNext}
-          className="w-full mt-4 bg-blue-900 hover:bg-pink-500 text-white py-2 rounded-lg transition"
+          className="w-full mt-4 bg-blue-900 hover:bg-pink-500 text-white py-2 rounded-lg transition cursor-pointer"
         >
           Next
         </button>
@@ -527,7 +527,7 @@ const handleChange = (index, value, field = null) => {
       )}
 
       { step === 4 && (
-         <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-30 pt-10 sm:pt-20">
+         <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-30 pt-40 md:pt-50 ">
       <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
         <h2 className="text-xl font-bold mb-6 text-center text-blue-900">
           You are almost there! Just a few more details so we can help you unlock your savings.

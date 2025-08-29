@@ -36,7 +36,7 @@ export default function LogoSwiper() {
         loop={true}
         spaceBetween={20}
         breakpoints={{
-          320: { slidesPerView: 2 },   // small mobiles
+          320: { slidesPerView: 3 },   // small mobiles
           640: { slidesPerView: 3 },   // bigger mobiles
           768: { slidesPerView: 4 },   // tablets
           1024: { slidesPerView: 5 },  // laptops

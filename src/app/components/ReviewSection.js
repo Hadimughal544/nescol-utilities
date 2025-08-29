@@ -13,7 +13,7 @@ export default function ReviewSection() {
         We offer a full suite of <Link href={"/Servicespage"} className=" font-semibold hover:underline">Business services </Link> 
           including <Link href={"/services/broadband/broadband"} className=" font-semibold hover:underline"> Broadband </Link>,<Link href="/services/gas/energy2" className=" font-semibold hover:underline"> Gas </Link> ,
            <Link href="/services/Electricity/energy2" className=" font-semibold hover:underline"> Electricity </Link>,
-           <Link href="/services/payment-solution/payment-solution" className=" font-semibold hover:underline"> Payment Solutions </Link>, and IT Services all designed to protect you from high market rates. Our mission is simple: help you 
+           <Link href="/services/payment-solution/payment-solution" className=" font-semibold hover:underline"> Payment Solutions </Link>, and <span className=" font-semibold hover:underline"> IT </span> <Link href={"/Servicespage"} className=" font-semibold hover:underline"> services </Link>  all designed to protect you from high market rates. Our mission is simple: help you 
          save more by comparing top providers and delivering the best value, fast.
       </h2>
 

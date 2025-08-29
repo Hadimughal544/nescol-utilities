@@ -6,7 +6,7 @@ import { FaFire } from "react-icons/fa";
 export default function Energy() {
   return (
     <main className=" relative pb-10 md:p-0 ">
-      <div className="relative w-full h-[500px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
+      <div className="relative w-full h-[500px] sm:h-[350px] md:h-[450px] lg:h-[600px]">
         {/* ✅ Background Image */}
         <Image
           src="/assets/energy1.jpg"

@@ -8,7 +8,7 @@ import { TbWorld } from "react-icons/tb";
 export default function Complaint() {
   return (
     <main>
-    <div className="relative w-full h-[450px] md:h-[350px] lg:h-[400px]">
+    <div className="relative w-full h-[450px] md:h-[350px] lg:h-[600px]">
       {/* Blurred Background Image */}
       <Image
         src="/assets/complaint.jpg"
