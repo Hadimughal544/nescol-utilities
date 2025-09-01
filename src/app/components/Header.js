@@ -65,7 +65,7 @@ export default function Header() {
           </Link>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button onClick={() => setMobileMenuOpen(true)}>
               <HiMenu size={30} />
             </button>
@@ -80,7 +80,7 @@ export default function Header() {
           />
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-10  items-center text-md font-bold">
+          <nav className="hidden lg:flex gap-10  items-center text-md font-bold">
             <div className="flex gap-7 items-center">
               <Link href="/services/energy/energytype" className="nav-link py-2 px-4  hover:text-pink-500 transition-colors">Energy</Link>
               <span className="border-1 h-8 border-pink-500"></span>
@@ -115,15 +115,15 @@ export default function Header() {
 
       {/* Subheader bar */}
       <div className="bg-green-700 px-6 md:px-10 md:pl-20 flex flex-col text-white md:flex-row justify-between items-center text-sm w-full ">
-        <div className="hidden md:flex items-center gap-2 ">
+        <div className="hidden lg:flex items-center gap-2 ">
           <BsLightningCharge className="text-lg" />
           <span>Compare UK providers cut your bills</span>
         </div>
-        <div className="hidden md:flex items-center gap-2 ">
+        <div className="hidden lg:flex items-center gap-2 ">
           <MdOutlineVerified className="text-lg" />
           <span>We’ll beat any price guaranteed savings</span>
         </div>
-        <div className="hidden md:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-2">
           <IoWalletOutline className="text-lg" />
           <span>Unlock your savings instantly</span>
         </div>

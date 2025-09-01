@@ -54,7 +54,7 @@ export default function Home() {
                 >
                   <Service
                     icon={<HiOutlineCurrencyPound />}
-                    label="Payment Solutions"
+                    label="Payment solutions"
                     text="Easy, efficient and disposal services"
                   />
                 </Link>

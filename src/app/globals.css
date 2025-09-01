@@ -24,12 +24,7 @@
 }
 
 /* Dark mode overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000; /* Pure black background */
-    --foreground: #ffffff; /* Pure white text */
-  }
-}
+
 
 body {
   font-family: 'Exo', sans-serif;
