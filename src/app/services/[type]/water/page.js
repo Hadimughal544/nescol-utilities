@@ -538,7 +538,7 @@ const handleChange = (index, value, field = null) => {
 
         <button
           onClick={handleNext}
-          className="w-full mt-4 bg-blue-900 hover:bg-pink-500 text-white py-2 rounded-lg transition"
+          className="w-full mt-4 bg-blue-900 hover:bg-pink-500 text-white py-2 rounded-lg transition cursor-pointer"
         >
           Next
         </button>
