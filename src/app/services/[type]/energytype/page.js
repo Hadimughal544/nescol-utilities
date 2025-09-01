@@ -35,7 +35,7 @@ export default function EnergyType() {
         />
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 z-20 py-10 md:py-20 px-10 md:px-10 flex  md:items-center mt-5 ">
+        <div className="absolute inset-0 z-20 py-10 md:py-20 px-10 md:px-10 flex  md:items-center mt-30 ">
           <div className="space-y-6 w-full text-center md:text-left">
             {/* Headings */}
             <div className="flex flex-col gap-4">
@@ -54,7 +54,7 @@ export default function EnergyType() {
             </div>
 
             {/* Card Box */}
-            <div className="w-full max-w-md mx-auto md:mx-0 flex gap-6 flex-col items-center justify-center bg-white px-4 py-6 sm:py-8 rounded-2xl shadow-lg">
+            <div className="w-full max-w-md mx-auto md:mx-0 flex gap-6 flex-col items-center justify-center bg-white px-4 py-6 sm:py-8 rounded-2xl shadow-2xl">
               <h1 className="text-xl sm:text-2xl font-bold">
                 Cut expenses. Work smarter.
               </h1>

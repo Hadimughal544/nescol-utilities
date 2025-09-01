@@ -17,7 +17,7 @@ export default function Services() {
             src="/assets/services1.jpg"
             alt="services background"
             fill
-            className=" object-cover w-full h-full z-0  brightness-85 hidden md:block"
+            className=" object-cover w-full h-full z-0  brightness-85 "
             />
 
             <div className="absolute inset-0 bg-blue-950/40 z-10" />
