@@ -156,7 +156,7 @@ if(type === "gas") {
     if (!validateStep()) return;
     setLoading(true);
     try {
-      const res = await fetch("https://31.97.117.214:3001/api/energy", {
+      const res = await fetch("https://nescolutilities.co.uk/api/energy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

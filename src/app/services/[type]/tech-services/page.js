@@ -50,7 +50,7 @@ export default function OtherServicesForm() {
 
   setLoading(true);
     try {
-      const res = await fetch('http://31.97.117.214:3001/api/other-services', {
+      const res = await fetch("https://nescolutilities.co.uk/api/other-services", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
