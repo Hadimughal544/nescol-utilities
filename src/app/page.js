@@ -87,12 +87,12 @@ export default function Home() {
 
 function Service({ icon, label, text }) {
   return (
-    <div className="group flex flex-row items-center shadow-xl bg-white border rounded-xl h-20 sm:h-auto p-4 space-x-4 w-full hover:text-pink-500 cursor-pointer">
+    <div className="group flex flex-row items-center shadow-xl bg-white border rounded-xl h-20 sm:h-auto p-4 space-x-4 w-full hover:text-pink-500 cursor-pointer ">
       <div className="text-4xl md:text-5xl text-black group-hover:text-pink-500">
         {icon}
       </div>
-      <div className="flex flex-col text-center md:text-left">
-        <div className="font-bold text-base md:text-lg text-black group-hover:text-pink-500">
+      <div className="flex flex-col text-center ">
+        <div className="font-bold text-base md:text-lg text-black group-hover:text-pink-500 text-center">
           {label}
         </div>
         <div className="text-xs md:text-sm text-black group-hover:text-pink-500">

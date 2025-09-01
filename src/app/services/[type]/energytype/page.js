@@ -54,7 +54,7 @@ export default function EnergyType() {
             </div>
 
             {/* Card Box */}
-            <div className="w-full max-w-md mx-auto md:mx-0 flex gap-6 flex-col items-center justify-center bg-white px-4 py-6 sm:py-8 rounded-2xl shadow-2xl">
+            <div className="w-full max-w-md mx-auto md:mx-0 flex gap-6 flex-col items-center justify-center bg-white px-4 py-6 sm:py-8 rounded-2xl shadow-xl">
               <h1 className="text-xl sm:text-2xl font-bold">
                 Cut expenses. Work smarter.
               </h1>
