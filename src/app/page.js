@@ -45,7 +45,7 @@ export default function Home() {
                   <Service
                     icon={<FaBolt />}
                     label="Energy"
-                    text="Get the best electricity & gas rates."
+                    text="Discover affordable electricity and gas plans."
                   />
                 </Link>
                 <Link

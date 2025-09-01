@@ -164,7 +164,7 @@ if(type === "gas") {
                                supplier: inputs[0],
                                bill: inputs[1].bill,
                                eac: inputs[1].eac,
-                               expiry_date: inputs[2],
+                               expiry_date: inputs[2] || null,
                                NewBusiness: isNewBusiness,
                                postcode: postcode,
                                currentaddress: selectedAddress,
