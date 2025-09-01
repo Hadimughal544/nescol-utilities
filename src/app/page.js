@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="">
       {/* ✅ Hero Section */}
-      <div className="relative h-[800px] w-full ">
+      <div className="relative md:h-[500px] lg:h-[800px] w-full mt-10">
         {/* Background Image */}
         <Image
           src="/assets/Homepage2.jpg"
@@ -24,28 +24,28 @@ export default function Home() {
         <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col justify-start h-full px-4 md:px-20 pt-30">
+        <div className="relative z-20 flex flex-col justify-start h-full px-4 md:px-6 lg:px-20 pt-20 md:pt-20 lg:pt-30">
           <div className="text-white py-8 text-center md:text-left">
-            <h1 className="text-2xl md:text-4xl font-extrabold mb-4">
+            <h1 className=" text-2xl md:text-xl lg:text-4xl font-extrabold mb-4 md:mb-2 lg:mb-4">
               Explore Business Services.
             </h1>
-            <h3 className="text-lg md:text-2xl font-bold mb-4">
+            <h3 className="text-lg md:text-lg lg:text-2xl font-bold mb-4 md:mb-2 lg:mb-4">
               Uncover the top deals for your business today.
             </h3>
-            <p className="text-sm md:text-lg leading-relaxed">
+            <p className=" sm:text-sm md:text-sm lg:text-lg leading-relaxed ">
               We assess various reliable UK suppliers across the market to
               guarantee <br className="hidden md:block" /> you the best price
               for your business.
             </p>
 
             {/* Services Grid */}
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center md:place-items-start">
-              <div className="flex flex-col gap-6 w-full items-center md:items-start">
+            <div className=" mt-8 md:mt-5 lg:mt-10  gap-4 md:gap-0 lg:gap-8 grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center md:place-items-start">
+              <div className="flex flex-col gap-4 md:gap-4 lg:gap-6 w-full items-center md:items-start">
                 <Link href={`/services/energy/energytype`} className="w-full max-w-xs">
                   <Service
                     icon={<FaBolt />}
                     label="Energy"
-                    text="Discover affordable electricity and gas plans."
+                    text="Affordable electricity and gas plans tailored to your needs."
                   />
                 </Link>
                 <Link
@@ -55,24 +55,24 @@ export default function Home() {
                   <Service
                     icon={<HiOutlineCurrencyPound />}
                     label="Payment solutions"
-                    text="Easy, efficient and disposal services"
+                    text="Simple, efficient, and secure services for easy transactions."
                   />
                 </Link>
               </div>
 
-              <div className="flex flex-col gap-6 w-full items-center md:items-start">
+              <div className="flex flex-col gap-4 md:gap-4 lg:gap-6 w-full items-center md:items-start">
                 <Link href={`/services/broadband/energytype`} className="w-full max-w-xs">
                   <Service
                     icon={<FaWifi />}
                     label="Broadband"
-                    text="Choose internet that meets your needs."
+                    text="Reliable internet solutions built to support every business."
                   />
                 </Link>
                 <Link href={`/services/water/energytype`} className="w-full max-w-xs">
                   <Service
                     icon={<FaTint />}
                     label="Water"
-                    text="Reliable suppliers, sustainable solutions."
+                    text="Sustainable water services with trusted business suppliers."
                   />
                 </Link>
               </div>
@@ -87,15 +87,15 @@ export default function Home() {
 
 function Service({ icon, label, text }) {
   return (
-    <div className="group flex flex-row items-center shadow-xl bg-white border rounded-xl h-20 sm:h-auto p-4 space-x-4 w-full hover:text-pink-500 cursor-pointer ">
-      <div className="text-4xl md:text-5xl text-black group-hover:text-pink-500">
+    <div className="group flex flex-row items-center shadow-xl bg-white border rounded-xl h-20 sm:h-auto p-4 sm:pb-4 md:pb-3 lg:pb-4 space-x-4 md:space-x-2 lg:space-x-4 md:w-[80%] lg:w-[100%] hover:text-pink-500 cursor-pointer ">
+      <div className=" text-4xl md:text-2xl lg:text-5xl text-black group-hover:text-pink-500">
         {icon}
       </div>
-      <div className="flex flex-col text-center ">
-        <div className="font-bold text-base md:text-lg text-black group-hover:text-pink-500 text-center">
+      <div className="flex flex-col text-left ">
+        <div className="font-bold text-base md:text-xs lg:text-lg text-black group-hover:text-pink-500 ">
           {label}
         </div>
-        <div className="text-xs md:text-sm text-black group-hover:text-pink-500">
+        <div className="text-sm md:text-xs lg:text:sm text-black group-hover:text-pink-500">
           {text}
         </div>
       </div>

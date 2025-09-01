@@ -115,17 +115,17 @@ export default function Header() {
 
       {/* Subheader bar */}
       <div className="bg-green-700 px-6 md:px-10 md:pl-20 flex flex-col text-white md:flex-row justify-between items-center text-sm w-full ">
-        <div className="hidden lg:flex items-center gap-2 ">
+        <div className="hidden md:flex items-center gap-2 ">
           <BsLightningCharge className="text-lg" />
-          <span>Compare UK providers cut your bills</span>
+          <span className=' text-xs lg:text-sm'>Compare UK providers cut your bills</span>
         </div>
-        <div className="hidden lg:flex items-center gap-2 ">
+        <div className="hidden md:flex items-center gap-2 ">
           <MdOutlineVerified className="text-lg" />
-          <span>We’ll beat any price guaranteed savings</span>
+          <span className=' text-xs lg:text-sm'>We’ll beat any price guaranteed savings</span>
         </div>
-        <div className="hidden lg:flex items-center gap-2">
-          <IoWalletOutline className="text-lg" />
-          <span>Unlock your savings instantly</span>
+        <div className="hidden md:flex items-center gap-2">
+          <IoWalletOutline className=" text-lg" />
+          <span className=' text-xs lg:text-sm'>Unlock your savings instantly</span>
         </div>
         <div>
           <TrustpilotWidget />
