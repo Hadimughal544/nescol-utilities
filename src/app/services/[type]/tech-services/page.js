@@ -81,7 +81,7 @@ export default function OtherServicesForm() {
   };
 
   return (
-    <div className="relative min-h-screen h-[850px] w-full">
+    <div className="relative md:h-[500px] lg:h-[850px] w-full md:mt-15 lg:mt-5 ">
       {/* Background image (desktop only) */}
       <Image
         src="/assets/BGQ3.jpg"
@@ -95,9 +95,9 @@ export default function OtherServicesForm() {
       <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
 
       {/* Form Container */}
-      <div className="relative z-20 min-h-screen flex items-start px-5 sm:px-10 md:px-30 pt-40 md:pt-50  ">
-        <div className="bg-white p-6 rounded-xl shadow-lg w-full max-w-md">
-          <h1 className="text-2xl font-bold text-center text-blue-900 mb-6">
+      <div className="relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start px-5 md:px-10 lg:px-30 pt-40 md:pt-30 lg:pt-50  ">
+        <div className="bg-white p-6 rounded-xl shadow-lg w-full md:max-w-sm lg:max-w-xl">
+          <h1 className=" md:text-xl lg:text-2xl font-extrabold text-left text-blue-900 mb-6">
             Empowering your business with seamless tech support.
           </h1>
         

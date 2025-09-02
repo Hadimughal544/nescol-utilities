@@ -252,7 +252,7 @@ const handleChange = (index, value, field = null) => {
 
 
   return (
-    <div className="relative min-h-screen h-[850px] w-full ">
+    <div className="relative md:h-[500px] lg:h-[850px] w-full md:mt-15 lg:mt-5  ">
       <Image
         src="/assets/BGQ3.jpg"
         alt="background"
@@ -272,9 +272,9 @@ const handleChange = (index, value, field = null) => {
 
       {/* Step 1 */}
       {step === 1 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-20 pt-40 md:pt-50 ">
-          <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-lg backdrop-blur-md">
-            <h2 className="text-2xl font-extrabold mb-6 text-blue-900">
+        <div className="relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-20 pt-40 md:pt-30 lg:pt-50 ">
+    <div className="bg-white p-6 md:p-8 lg:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-xl">
+    <h2 className=" text-md md:text-lg lg:text-2xl font-extrabold mb-6 text-blue-900">
               Help Us Understand Your Current Setup
             </h2>
 
@@ -348,12 +348,12 @@ const handleChange = (index, value, field = null) => {
 
       {/* Step 2 */}
       {step === 2 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12 pt-40 md:pt-50 ">
-    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full max-w-xl">
-      <h1 className="text-2xl sm:text-3xl md:text-3xl text-blue-900 font-bold mb-2">
+       <div className="relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12  pt-40 md:pt-30 lg:pt-50 ">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-xl">
+      <h1 className="text-sm md:text-xl lg:text-2xl text-blue-900 font-extrabold mb-2">
               Kindly provide your business postal code
             </h1>
-            <h3 className="text-sm sm:text-md md:text-lg text-black font-medium mb-6">
+            <h3 className="text-sm sm:text-md md:text-md text-black font-medium mb-6">
               Sharing your location allows us to tailor savings just for you.
             </h3>
 
@@ -429,10 +429,9 @@ const handleChange = (index, value, field = null) => {
       )}
 
       { step === 3 && (
-        <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-28 pt-40 md:pt-50 ">
-    
-      <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
-        <h2 className="text-3xl font-bold mb-6 text-center text-blue-900">
+        <div className="relative z-20 lg:pl-20 md:pl-10 md:pr-30  min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-28  pt-40 md:pt-30 lg:pt-50 ">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm  lg:max-w-xl">
+      <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-6 text-center text-blue-900">
           Enter your business address 
         </h2>
 
@@ -527,9 +526,9 @@ const handleChange = (index, value, field = null) => {
       )}
 
       { step === 4 && (
-         <div className="relative z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-30 pt-40 md:pt-50 ">
-      <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
-        <h2 className="text-xl font-bold mb-6 text-center text-blue-900">
+         <div className="relative z-20 lg:pl-20 md:pl-10 md:pr-30    min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-30 pt-40  md:pt-30 lg:pt-50 ">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm lg:max-w-xl">
+        <h2 className="lg:text-2xl sm:text-sm md:text-xl font-extrabold mb-6 text-left text-blue-900">
           You are almost there! Just a few more details so we can help you unlock your savings.
         </h2>
 

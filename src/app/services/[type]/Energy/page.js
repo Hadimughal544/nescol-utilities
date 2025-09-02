@@ -20,9 +20,9 @@ export default function Energy() {
         <div className="absolute inset-0 bg-blue-950/20 z-10" />
 
         {/* Content */}
-        <div className="absolute inset-0 z-20 flex items-centre md:items-end justify-centre md:justify-start px-10 md:px-10 pb-10 md:pb-10 pt-40 md:pt-0">
+        <div className="absolute inset-0 z-20 flex items-centre md:items-end justify-centre md:justify-start px-10 md:px-10 lg:px-20 pb-10 md:pb-10 pt-40 md:pt-0">
           <div className="space-y-6 text-center md:text-left">
-            <h1 className="text-xl sm:text-2xl md:text-3xl text-white font-bold">
+            <h1 className="lg:text-3xl sm:text-2xl md:text-3xl text-white font-bold">
               Which energy do you need?
             </h1>
 

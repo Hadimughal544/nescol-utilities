@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="">
       {/* ✅ Hero Section */}
-      <div className="relative md:h-[500px] lg:h-[800px] w-full mt-10">
+      <div className="relative md:h-[470px] lg:h-[800px] w-full mt-10 lg:mt-5 md:mt-11">
         {/* Background Image */}
         <Image
           src="/assets/Homepage2.jpg"
@@ -24,24 +24,33 @@ export default function Home() {
         <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col justify-start h-full px-4 md:px-6 lg:px-20 pt-20 md:pt-20 lg:pt-30">
+        <div className="relative z-20 mr-5 flex flex-col justify-start h-full px-4 md:px-6 lg:px-20 pt-20 md:pt-15 lg:pt-30">
           <div className="text-white py-8 text-center md:text-left">
-            <h1 className=" text-2xl md:text-xl lg:text-4xl font-extrabold mb-4 md:mb-2 lg:mb-4">
+            <h1 className=" md:ml-5 lg:ml-0 text-2xl md:text-xl lg:text-4xl font-extrabold mb-4 md:mb-0 lg:mb-4">
               Explore Business Services.
             </h1>
-            <h3 className="text-lg md:text-lg lg:text-2xl font-bold mb-4 md:mb-2 lg:mb-4">
+            <h3 className=" md:ml-5 lg:ml-0 text-lg md:text-lg lg:text-2xl font-bold mb-4 md:mb-0 lg:mb-4">
               Uncover the top deals for your business today.
             </h3>
-            <p className=" sm:text-sm md:text-sm lg:text-lg leading-relaxed ">
+            <p className=" md:ml-5 lg:ml-0 sm:text-sm md:text-sm lg:text-lg leading-relaxed ">
               We assess various reliable UK suppliers across the market to
               guarantee <br className="hidden md:block" /> you the best price
               for your business.
             </p>
 
             {/* Services Grid */}
-            <div className=" mt-8 md:mt-5 lg:mt-10  gap-4 md:gap-0 lg:gap-8 grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center md:place-items-start">
-              <div className="flex flex-col gap-4 md:gap-4 lg:gap-6 w-full items-center md:items-start">
-                <Link href={`/services/energy/energytype`} className="w-full max-w-xs">
+            <div
+  className="
+    mt-8 md:mt-3 lg:mt-10
+    grid
+    gap-x-2 md:gap-x-1 lg:gap-x-6   /* horizontal gap */
+    gap-y-4                          /* vertical gap */
+    sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+    place-items-center md:place-items-start
+  "
+>
+              <div className="flex md:ml-5 lg:ml-0 flex-col gap-4 md:gap-4 lg:gap-6 w-full items-center md:items-start">
+                <Link href={`/services/energy/energytype`} className="w-full max-w-lg">
                   <Service
                     icon={<FaBolt />}
                     label="Energy"
@@ -50,7 +59,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/services/payment-solution/payment-solution"
-                  className="w-full max-w-xs"
+                  className="w-full max-w-lg"
                 >
                   <Service
                     icon={<HiOutlineCurrencyPound />}
@@ -61,14 +70,14 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col gap-4 md:gap-4 lg:gap-6 w-full items-center md:items-start">
-                <Link href={`/services/broadband/energytype`} className="w-full max-w-xs">
+                <Link href={`/services/broadband/energytype`} className="w-full max-w-lg">
                   <Service
                     icon={<FaWifi />}
                     label="Broadband"
                     text="Reliable internet solutions built to support every business."
                   />
                 </Link>
-                <Link href={`/services/water/energytype`} className="w-full max-w-xs">
+                <Link href={`/services/water/energytype`} className="w-full lg:max-w-lg">
                   <Service
                     icon={<FaTint />}
                     label="Water"
