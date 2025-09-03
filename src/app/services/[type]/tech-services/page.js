@@ -95,7 +95,7 @@ export default function OtherServicesForm() {
       <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
 
       {/* Form Container */}
-       <div className="relative md:pl-10 lg:pl-20 md:pr-30 z-20 min-h-screen flex items-start px-5 md:px-10 lg:px-30 pt-40 md:pt-30 lg:pt-50">
+       <div className="relative md:pl-10 lg:pl-20 md:pr-30 z-20 min-h-screen flex items-start px-7 md:px-10 lg:px-30 pt-40 md:pt-30 lg:pt-50">
       <motion.div
         initial={{ opacity: 0, y: 50 }} // start faded + below
         animate={{ opacity: 1, y: 0 }} // fade in + slide up

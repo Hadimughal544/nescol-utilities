@@ -239,7 +239,7 @@ const handleAddressChoice = (manual) => {
        {step > 1 && (
             <button
               onClick={prevStep}
-              className="absolute top-8   left-5 md:left-10 lg:left-20 z-30 mt-25 md:mt-12 lg:mt-30 flex items-center   hover:bg-white/80 bg-white text-blue-900 text-sm md:text-lg lg:text-lg px-3 md:px-5 py-1 rounded-full shadow-lg transition"
+              className="absolute top-8   left-7 md:left-10 lg:left-20 z-30 mt-25 md:mt-12 lg:mt-30 flex items-center   hover:bg-white/80 bg-white text-blue-900 text-sm md:text-lg lg:text-lg px-3 md:px-5 py-1 rounded-full shadow-lg transition"
             >
               <FaArrowRightLong className="rotate-180" />
             </button>
@@ -262,7 +262,7 @@ const handleAddressChoice = (manual) => {
        initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-      className="relative md:pl-10 lg:pl-20 md:pr-30 z-20 min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-20 pt-40 md:pt-30 lg:pt-50"
+      className="relative md:pl-10 lg:pl-20 md:pr-30 z-20 min-h-screen flex items-start justify-center px-7 md:px-10 lg:px-20 pt-40 md:pt-30 lg:pt-50"
     >
     <div className="bg-white p-6 md:p-8 lg:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-xl">
       <h2 className="text-sm md:text-xl lg:text-2xl font-extrabold mb-6 text-blue-900">
@@ -358,7 +358,7 @@ const handleAddressChoice = (manual) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      className=" relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12  pt-40 md:pt-30 lg:pt-50"
+      className=" relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start justify-center px-7 sm:px-10 md:px-12  pt-40 md:pt-30 lg:pt-50"
     >
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-xl">
       <h1 className="text-sm md:text-xl lg:text-2xl text-blue-900 font-extrabold mb-2">
@@ -447,10 +447,10 @@ const handleAddressChoice = (manual) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      className="relative z-20 lg:pl-20 md:pl-10 md:pr-30  min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-28  pt-40 md:pt-30 lg:pt-50"
+      className="relative z-20 lg:pl-20 md:pl-10 md:pr-30  min-h-screen flex items-start justify-center px-7 md:px-10 lg:px-28  pt-40 md:pt-30 lg:pt-50"
     >
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm  lg:max-w-xl">
-      <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-6 text-center text-blue-900">
+      <h2 className="text-2xl md:text-xl lg:text-2xl font-extrabold mb-6 text-center text-blue-900">
         Enter your business address
       </h2>
 
@@ -552,7 +552,7 @@ const handleAddressChoice = (manual) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.5 }}
-      className="relative z-20 lg:pl-20 md:pl-10 md:pr-30    min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-30 pt-40  md:pt-30 lg:pt-50 ."
+      className="relative z-20 lg:pl-20 md:pl-10 md:pr-30    min-h-screen flex items-start justify-center px-7 md:px-10 lg:px-30 pt-40  md:pt-30 lg:pt-50 ."
     >
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm lg:max-w-xl">
       <h2 className="lg:text-2xl sm:text-sm md:text-xl font-extrabold mb-6 text-left text-blue-900">
