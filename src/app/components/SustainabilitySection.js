@@ -20,7 +20,7 @@ const cardVariants = {
 
 export default function SustainabilitySection() {
   return (
-    <section className="bg-white py-12 px-4 sm:px-6 rounded-3xl text-center">
+    <section className="bg-white py-12 px-4 sm:px-6 rounded-3xl text-center md:mt-10">
       <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8">
         Sustainability starts with smarter savings.
       </h2>

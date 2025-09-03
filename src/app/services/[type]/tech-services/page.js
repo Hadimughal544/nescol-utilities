@@ -1,6 +1,6 @@
 'use client';
-
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useRouter, useParams } from 'next/navigation';
 import Image from 'next/image';
 import SuccessAlert from '@/app/components/SuccessAlert';
@@ -95,114 +95,124 @@ export default function OtherServicesForm() {
       <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
 
       {/* Form Container */}
-      <div className="relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start px-5 md:px-10 lg:px-30 pt-40 md:pt-30 lg:pt-50  ">
-        <div className="bg-white p-6 rounded-xl shadow-lg w-full md:max-w-sm lg:max-w-xl">
-          <h1 className=" md:text-xl lg:text-2xl font-extrabold text-left text-blue-900 mb-6">
-            Empowering your business with seamless tech support.
-          </h1>
-        
-          {showSuccess && <SuccessAlert />}
+       <div className="relative md:pl-10 lg:pl-20 md:pr-30 z-20 min-h-screen flex items-start px-5 md:px-10 lg:px-30 pt-40 md:pt-30 lg:pt-50">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }} // start faded + below
+        animate={{ opacity: 1, y: 0 }} // fade in + slide up
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="bg-white p-6 rounded-xl shadow-lg w-full md:max-w-sm lg:max-w-xl"
+      >
+        <h1 className="md:text-xl lg:text-2xl font-extrabold text-left text-blue-900 mb-6">
+          Empowering your business with seamless tech support.
+        </h1>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+        {showSuccess && <SuccessAlert />}
 
-            {/* Contact Name */}
-            <div>
-              <label className="block text-sm font-medium mb-1">Contact Name <span className=' text-red-500'>*</span></label>
-              <input
-                type="text"
-                value={contactName}
-                onChange={(e) => setContactName(e.target.value)}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                placeholder="Enter your contact name"
-              />
-              {errors.contactName && (
-                <p className="text-red-500 text-sm mt-1">{errors.contactName}</p>
-              )}
-            </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Contact Name */}
+          <div>
+            <label className="block text-sm font-medium mb-1">
+              Contact Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              value={contactName}
+              onChange={(e) => setContactName(e.target.value)}
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              placeholder="Enter your contact name"
+            />
+            {errors.contactName && (
+              <p className="text-red-500 text-sm mt-1">{errors.contactName}</p>
+            )}
+          </div>
 
-            {/* Mobile Number */}
-            <div>
-              <label className="block text-sm font-medium mb-1">Mobile Number <span className=' text-red-500'>*</span></label>
-              <input
-                type="tel"
-                value={mobileNumber}
-                onChange={(e) => setMobileNumber(e.target.value)}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                placeholder="Enter a valid 11-digit number"
-              />
-              {errors.mobileNumber && (
-                <p className="text-red-500 text-sm mt-1">{errors.mobileNumber}</p>
-              )}
-            </div>
+          {/* Mobile Number */}
+          <div>
+            <label className="block text-sm font-medium mb-1">
+              Mobile Number <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="tel"
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              placeholder="Enter a valid 11-digit number"
+            />
+            {errors.mobileNumber && (
+              <p className="text-red-500 text-sm mt-1">{errors.mobileNumber}</p>
+            )}
+          </div>
 
-            {/* Email Address */}
-            <div>
-              <label className="block text-sm font-medium mb-1">Email Address <span className=' text-red-500'>*</span></label>
-              <input
-                type="email"
-                value={emailAddress}
-                onChange={(e) => setEmailAddress(e.target.value)}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                placeholder="Enter valid email address"
-              />
-              {errors.emailAddress && (
-                <p className="text-red-500 text-sm mt-1">{errors.emailAddress}</p>
-              )}
-            </div>
+          {/* Email Address */}
+          <div>
+            <label className="block text-sm font-medium mb-1">
+              Email Address <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              value={emailAddress}
+              onChange={(e) => setEmailAddress(e.target.value)}
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              placeholder="Enter valid email address"
+            />
+            {errors.emailAddress && (
+              <p className="text-red-500 text-sm mt-1">{errors.emailAddress}</p>
+            )}
+          </div>
 
-            {/* Message */}
-            <div>
-              <label className="block text-sm font-medium mb-1">Message</label>
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                placeholder="Enter your message"
-                rows={4}
-              />
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-              )}
-            </div>
+          {/* Message */}
+          <div>
+            <label className="block text-sm font-medium mb-1">Message</label>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              placeholder="Enter your message"
+              rows={4}
+            />
+            {errors.message && (
+              <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+            )}
+          </div>
 
-            <button
-              onClick={handleSubmit}
-              disabled={loading}
-              className="w-full mt-4 bg-blue-900 text-white py-2 rounded-lg hover:bg-pink-500 cursor-pointer transition flex items-center justify-center gap-2"
-            >
-              {loading && !showSuccess ? (
-                <>
-                  <svg
-                    className="animate-spin h-5 w-5 text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="4"
-                    />
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                    />
-                  </svg>
-                  <span>Submitting...</span>
-                </>
-              ) : showSuccess ? (
-                "Submitted ✅"
-              ) : (
-                "Submit"
-              )}
-            </button>
-          </form>
-        </div>
-      </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full mt-4 bg-blue-900 text-white py-2 rounded-lg hover:bg-pink-500 cursor-pointer transition flex items-center justify-center gap-2"
+          >
+            {loading && !showSuccess ? (
+              <>
+                <svg
+                  className="animate-spin h-5 w-5 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                  />
+                </svg>
+                <span>Submitting...</span>
+              </>
+            ) : showSuccess ? (
+              'Submitted ✅'
+            ) : (
+              'Submit'
+            )}
+          </button>
+        </form>
+      </motion.div>
+    </div>
     </div>
   );
 }

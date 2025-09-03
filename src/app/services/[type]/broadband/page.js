@@ -49,6 +49,7 @@ export default function EnergyForm() {
   const [step, setStep] = useState(1);
   const [inputs, setInputs] = useState(['', { bill: '', eac: '' }, '']);
   const [currentStep, setCurrentStep] = useState(0);
+  const [history, setHistory] = useState([1]); // start with step 1
   const [error, setError] = useState('');
   const [postcode, setPostcode] = useState('');
   const [postcodeError, setPostcodeError] = useState('');
@@ -90,8 +91,23 @@ const supplier = inputs[0];
 
 
 
-  const nextStep = () => setStep((prev) => prev + 1);
-  const prevStep = () => setStep((prev) => prev - 1);
+  const nextStep = () => {
+  setHistory((prev) => [...prev, step + 1]); // store the step you’re going to
+  setStep((prev) => prev + 1);
+};
+  const prevStep = () => {
+  setHistory((prev) => {
+    if (prev.length > 1) {
+      const updated = [...prev];
+      updated.pop(); // remove current step
+      const last = updated[updated.length - 1]; // get previous step
+      setStep(last);
+      return updated;
+    }
+    return prev;
+  });
+};
+
 
 const handleChange = (index, value, field = null) => {
   const updated = [...inputs];
@@ -111,13 +127,7 @@ const handleChange = (index, value, field = null) => {
 
 
 
-  const handleAddressChoice = (manual) => {
-  if (manual) {
-    setStep(3); // go to address entry form
-  } else {
-    setStep(4); // skip to final step
-  }
-};
+
 
 
   const handleSelect = (address) => {
@@ -203,16 +213,29 @@ const handleChange = (index, value, field = null) => {
          }
       
   };
+  
+  
 
-  const handleNext = () => {
-    if (!validateStep()) return;
-   if (step === 2) {
-    // Jump straight to step 4
+ const handleNext = () => {
+  if (!validateStep()) return;
+
+  if (step === 2) {
+    setHistory((prev) => [...prev, 4]); // if skipping, record 4
     setStep(4);
   } else {
     nextStep();
   }
-  };
+};
+
+const handleAddressChoice = (manual) => {
+  if (manual) {
+    setHistory((prev) => [...prev, 3]);
+    setStep(3);
+  } else {
+    setHistory((prev) => [...prev, 4]);
+    setStep(4);
+  }
+};
 
   const handleSubmit = async () => { 
     if (!validateStep()) return;
@@ -271,7 +294,7 @@ const handleChange = (index, value, field = null) => {
 
 
   return (
-    <div className="relative md:h-[500px] lg:h-[850px] w-full md:mt-15 lg:mt-5 ">
+    <div className="relative md:h-[530px] lg:h-[850px] w-full md:mt-15 lg:mt-5 ">
       <Image
         src="/assets/BGQ3.jpg"
         alt="background"
@@ -279,6 +302,15 @@ const handleChange = (index, value, field = null) => {
         className="object-cover z-0 hidden md:block"
         priority
       />
+      {/* ✅ Back button overlay */}
+    {step > 1 && (
+            <button
+              onClick={prevStep}
+              className="absolute top-8   left-5 md:left-10 lg:left-20 z-30 mt-25 md:mt-12 lg:mt-30 flex items-center   hover:bg-white/80 bg-white text-blue-900 text-sm md:text-lg lg:text-lg px-3 md:px-5 py-1 rounded-full shadow-lg transition"
+            >
+              <FaArrowRightLong className="rotate-180" />
+            </button>
+          )}
       <div className="flex gap-40 items-start">
 
         <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
@@ -289,8 +321,15 @@ const handleChange = (index, value, field = null) => {
         )}
 
       {/* Step 1 */}
-      {step === 1 && (
-       <div className="relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-20 pt-40 md:pt-30 lg:pt-50 ">
+      <AnimatePresence mode="wait">
+  {step === 1 && (
+    <motion.div
+      key="step1"
+       initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+      className="relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-20 pt-40 md:pt-30 lg:pt-50"
+    >
     <div className="bg-white p-6 md:p-8 lg:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-xl">
     <h2 className=" text-md md:text-lg lg:text-2xl font-extrabold mb-6 text-blue-900">
       Help Us Understand Your Current Setup
@@ -368,14 +407,23 @@ const handleChange = (index, value, field = null) => {
       Next
     </button>
   </div>
-</div>
-      )}
+</motion.div>
+  )}
+  
 
 
 
-      {/* Step 2 */}
+
       {step === 2 && (
-       <div className="relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12  pt-40 md:pt-30 lg:pt-50 ">
+    <motion.div
+      key="step2"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+      className=" relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start justify-center px-5 sm:px-10 md:px-12  pt-40 md:pt-30 lg:pt-50"
+    >
+       
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-xl">
       <h1 className="text-sm md:text-xl lg:text-2xl text-blue-900 font-extrabold mb-2">
               Kindly provide your business postal code
@@ -452,11 +500,19 @@ const handleChange = (index, value, field = null) => {
               </div>
             )}
           </div>
-        </div>
-      )}
+       </motion.div>
+        )}
 
-      { step === 3 && (
-      <div className="relative z-20 lg:pl-20 md:pl-10 md:pr-30  min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-28  pt-40 md:pt-30 lg:pt-50 ">
+
+       {step === 3 && (
+    <motion.div
+      key="step3"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+      className="relative z-20 lg:pl-20 md:pl-10 md:pr-30  min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-28  pt-40 md:pt-30 lg:pt-50"
+    >
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm  lg:max-w-xl">
       <h2 className="text-lg md:text-xl lg:text-2xl font-extrabold mb-6 text-center text-blue-900">
           Enter your business address 
@@ -549,11 +605,19 @@ const handleChange = (index, value, field = null) => {
           Next
         </button>
       </div>
-    </div>
-      )}
+    </motion.div>
+        )}
 
-      { step === 4 && (
-       <div className="relative z-20 lg:pl-20 md:pl-10 md:pr-30    min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-30 pt-40  md:pt-30 lg:pt-50 ">
+
+        {step === 4 && (
+    <motion.div
+      key="step4"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+      className="relative z-20 lg:pl-20 md:pl-10 md:pr-30    min-h-screen flex items-start justify-center px-5 md:px-10 lg:px-30 pt-40  md:pt-30 lg:pt-50 ."
+    >
     <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm lg:max-w-xl">
         <h2 className="lg:text-2xl sm:text-sm md:text-xl font-extrabold mb-6 text-left text-blue-900">
           You are almost there! Just a few more details so we can help you unlock your savings.
@@ -742,9 +806,10 @@ const handleChange = (index, value, field = null) => {
     "Submit"
   )}
 </button>
-      </div>
-    </div>
-      )}
+</div>
+   </motion.div>
+  )}
+</AnimatePresence>
       {showSuccess && <SuccessAlert />}
       </div>
       

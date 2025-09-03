@@ -1,6 +1,7 @@
-"use client";
+'use client';
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 export default function EnergyType() {
   const { type } = useParams();
@@ -23,7 +24,7 @@ export default function EnergyType() {
   };
 
   return (
-    <main  className="relative pb-20 md:pb-0">
+    <main className="relative pb-20 md:pb-0">
       <div className="relative h-[850px] md:h-[750px] w-full">
         {/* Background Image */}
         <Image
@@ -35,7 +36,7 @@ export default function EnergyType() {
         />
 
         {/* Overlay Content */}
-        <div className="absolute inset-0 z-20 py-10 md:py-20 px-10 md:px-10 lg:px-20 flex  md:items-center mt-30 ">
+        <div className="absolute inset-0 z-20 py-10 md:py-20 px-10 md:px-10 lg:px-20 flex md:items-center mt-30">
           <div className="space-y-6 w-full text-center md:text-left">
             {/* Headings */}
             <div className="flex flex-col gap-4">
@@ -48,13 +49,18 @@ export default function EnergyType() {
               </h2>
               <p className="text-sm sm:text-base md:text-md text-white leading-relaxed">
                 Nescol Utilities partners with trusted UK energy suppliers to
-                help you cut costs, reduce waste,<br></br> and maximize your savings
+                help you cut costs, reduce waste,<br /> and maximize your savings
                 all through smart, hassle-free solutions.
               </p>
             </div>
 
-            {/* Card Box */}
-            <div className="w-full md:max-w-md lg:max-w-lg mx-auto md:mx-0  flex gap-6 flex-col items-center justify-center bg-white px-4 py-6 sm:py-8 rounded-2xl shadow-xl">
+            {/* Card Box with fade-in */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-full md:max-w-md lg:max-w-lg mx-auto md:mx-0 flex gap-6 flex-col items-center justify-center bg-white px-4 py-6 sm:py-8 rounded-2xl shadow-xl"
+            >
               <h1 className="text-xl sm:text-2xl font-bold">
                 Cut expenses. Work smarter.
               </h1>
@@ -76,7 +82,8 @@ export default function EnergyType() {
                   Home
                 </button>
               </div>
-            </div>
+            </motion.div>
+
           </div>
         </div>
       </div>

@@ -6,6 +6,8 @@ import { HiOutlineMail } from "react-icons/hi";
 import { FaPhone } from "react-icons/fa6";
 import { SiInstagram } from "react-icons/si";
 import TrustpilotWidget from "./TrustpilotWidget";
+import { AiFillTikTok } from "react-icons/ai";
+import { FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -32,9 +34,9 @@ export default function Footer() {
 
   {/* Icons + Trustpilot stacked */}
   {/* Icons + Trustpilot in same row */}
-<div className="flex items-center gap-4 text-2xl text-pink-500">
-  <Link href="#"><IoLogoFacebook size={30} /></Link>
-  <Link href="#"><IoLogoLinkedin size={30} /></Link>
+<div className="flex items-center gap-3 text-2xl text-pink-500">
+  <Link href="#"><FaTiktok size={30} /></Link>
+  <Link href="https://www.linkedin.com/company/nescolutilities"><IoLogoLinkedin size={30} /></Link>
   <Link href="#"><SiInstagram size={30} /></Link>
 </div>
   
