@@ -24,10 +24,27 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Nescol Utilities",
   description:
-    "Say goodbye to inflated bills. We give you affordable rates that help your business save big.",
+    "Helping UK businesses cut costs on Energy, Broadband, Water, and Payment solutions—while also delivering expert Web Development, App Development, SEO, and Graphic Design services to boost your digital presence.",
+  keywords: [
+    "UK business broker",
+    "energy broker UK",
+    "business broadband UK",
+    "business water supplier UK",
+    "business payment solutions UK",
+    "UK web development",
+    "UK app development",
+    "SEO services UK",
+    "graphic design UK",
+    "digital marketing UK",
+  ],
   icons: {
     icon: "/favicon.ico",
   },
+    metadataBase: new URL("https://nescolutilities.co.uk"),
+  alternates: {
+    canonical: "https://nescolutilities.co.uk",
+  },
+
   openGraph: {
     title: "Nescol Utilities",
     description:

@@ -43,7 +43,7 @@ export default function Home() {
   className="
     mt-8 md:mt-3 lg:mt-10
     grid
-    gap-x-2 md:gap-x-1 lg:gap-x-6   /* horizontal gap */
+    gap-x-2 md:gap-x-1 lg:gap-10   /* horizontal gap */
     gap-y-4                          /* vertical gap */
     sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
     place-items-center md:place-items-start
@@ -96,15 +96,15 @@ export default function Home() {
 
 function Service({ icon, label, text }) {
   return (
-    <div className="group flex flex-row items-center shadow-xl bg-white border rounded-xl h-20 sm:h-auto p-4 sm:pb-4 md:pb-3 lg:pb-4 space-x-4 md:space-x-2 lg:space-x-4 md:w-[80%] lg:w-[100%] hover:text-pink-500 cursor-pointer ">
-      <div className=" text-4xl md:text-2xl lg:text-5xl text-black group-hover:text-pink-500">
+    <div className="group flex flex-row items-center shadow-xl bg-white border rounded-xl lg:h-25 sm:h-auto p-4 sm:pb-4 md:pb-3 lg:pb-4 space-x-4 md:space-x-2 lg:space-x-4 md:w-[80%] lg:w-[105%] hover:scale-105 nav-link hover:text-pink-500 cursor-pointer ">
+      <div className=" text-4xl md:text-2xl lg:text-3xl text-black group-hover:text-pink-500">
         {icon}
       </div>
       <div className="flex flex-col text-left ">
         <div className="font-bold text-base md:text-xs lg:text-lg text-black group-hover:text-pink-500 ">
           {label}
         </div>
-        <div className="text-sm md:text-xs lg:text:sm text-black group-hover:text-pink-500">
+        <div className="text-sm md:text-xs lg:text:xs text-black group-hover:text-pink-500">
           {text}
         </div>
       </div>

@@ -51,11 +51,11 @@ export default function Header() {
       <div className="px-6 py-4 md:px-20 flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
-          <Image src="/assets/mainlogo.png" alt="Company Logo" width={160} height={20} className="object-contain" />
+          <Image src="/assets/mainlogo.png" alt="Company Logo" width={130} height={20} className="object-contain" />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex gap-10 items-center text-md font-bold">
+        <nav className="hidden lg:flex gap-10 items-center text-sm font-bold">
           <div className="flex gap-7 items-center">
             <Link href="/services/energy/energytype" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">Energy</Link>
             <span className="border-1 h-8 border-pink-500"></span>
@@ -70,10 +70,10 @@ export default function Header() {
 
           {/* Contact Info */}
           <div className="flex gap-1 items-end cursor-pointer" onClick={handleCopy}>
-            <MdPhoneIphone size={45} className="text-blue-900 mb-1" />
+            <MdPhoneIphone size={35} className="text-blue-900 mb-1" />
             <div className="flex flex-col">
-              <h2 className="text-2xl text-pink-500">{textToCopy}</h2>
-              <p className="text-blue-900 text-md">{copied ? "Saved & Ready to Dial" : "Call our business line!"}</p>
+              <h2 className="text-lg text-pink-500">{textToCopy}</h2>
+              <p className="text-blue-900 text-xs ">{copied ? "Saved & Ready to Dial" : "Call our business line!"}</p>
             </div>
           </div>
         </nav>
@@ -109,11 +109,11 @@ export default function Header() {
 
           {/* Contact Info */}
           <div className="flex gap-3 items-center pt-4">
-            <MdPhoneIphone size={30} className="text-blue-900" />
+            <MdPhoneIphone size={20} className="text-blue-900" />
             <div>
               <a href={`tel:${textToCopy}`} className="block">
                 <h2 className="text-pink-500 text-lg">{textToCopy}</h2>
-                <p className="text-blue-900 text-sm">{copied ? "Saved & Ready to Dial" : "Sales Team"}</p>
+                <p className="text-blue-900 text-md">{copied ? "Saved & Ready to Dial" : "Sales Team"}</p>
               </a>
             </div>
           </div>

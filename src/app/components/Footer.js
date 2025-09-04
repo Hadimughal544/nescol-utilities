@@ -106,8 +106,8 @@ export default function Footer() {
 All rights reserved.<br></br>NEIL & NESCOL LTD is a registered company in Scotland 
 (SC679848). <br></br>
 Registered Address: 
-33 Main Street, Blackridge, Bathgate, Scotland, EH48 3RJ 
-<br></br>Proudly made in Scotland, UK.
+3/2, 28 Ancroft Street, Glasgow, Scotland, G20 7HU
+<br></br>Proudly made in Scotland.
         </div>
       </div>
     </footer>

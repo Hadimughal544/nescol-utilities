@@ -15,6 +15,7 @@ import { FaHandshake } from "react-icons/fa";
 import { useEffect } from "react";
 import SuccessAlert from '@/app/components/SuccessAlert';
 
+
 const electricitySuppliers = [
   'E.ON Next', 'British Gas', 'British Gas Lite', 'Scottish Power',
   'EDF Energy', 'Smartest Energy', 'TotalEnergies Gas & Power',
@@ -288,7 +289,7 @@ const handleAddressChoice = (manual) => {
 
 
         {showSuccess && (
-            <SuccessAlert />
+            <SuccessAlert/>
         )}
 
        <AnimatePresence mode="wait">

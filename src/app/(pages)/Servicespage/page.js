@@ -12,7 +12,7 @@ export default function Services() {
         <main>
 
 
-            <div className="relative w-full h-[400px] md:h-[450px] lg:h-[500px]">
+            <div className="relative w-full h-[400px] md:h-[450px] lg:h-[600px]">
                 <Image
             src="/assets/services1.jpg"
             alt="services background"
@@ -64,9 +64,9 @@ export default function Services() {
     );
 }
 
-function Box({ icon, label, text }) {
+function Box({  icon, label, text }) {
   return (
-    <div className="group flex flex-row items-center bg-white shadow-lg rounded-xl p-4 space-x-4 w-72 hover:text-pink-500">
+    <div className=" shadow-[4px_4px_6px_rgba(0,0,0,0.3)] group flex flex-row items-center bg-white hover:shadow-lg rounded-xl p-4 space-x-4 w-72 hover:text-pink-500">
       <div className="text-5xl text-black group-hover:text-pink-500">
         {icon}
       </div>
