@@ -11,6 +11,10 @@
   border-radius: 8px;
 }
 
+.nav-link2 {
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
 .nav-link:hover {
   /* Shadow only on the right and bottom */
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.6);

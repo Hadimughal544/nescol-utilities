@@ -59,7 +59,7 @@ export default function EnergyType() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-full md:max-w-md lg:max-w-lg mx-auto md:mx-0 flex gap-6 flex-col items-center justify-center bg-white px-4 py-6 sm:py-8 rounded-2xl shadow-xl"
+              className="w-full md:max-w-md nav-link2 lg:max-w-lg mx-auto md:mx-0 flex gap-6 flex-col items-center justify-center bg-white px-4 py-6 sm:py-8 rounded-2xl shadow-xl"
             >
               <h1 className="text-xl sm:text-2xl font-bold">
                 Cut expenses. Work smarter.

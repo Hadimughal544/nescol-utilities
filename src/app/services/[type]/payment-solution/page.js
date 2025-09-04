@@ -13,7 +13,8 @@ import { RiDeleteBin6Line, RiCheckboxMultipleFill } from "react-icons/ri";
 import Image from 'next/image';
 import { FaHandshake } from "react-icons/fa";
 import { useEffect } from "react";
-import SuccessAlert from '@/app/components/SuccessAlert';
+import { CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
 
 const electricitySuppliers = [
@@ -48,6 +49,7 @@ export default function EnergyForm() {
   const [postcodeError, setPostcodeError] = useState('');
   const [history, setHistory] = useState([1]); // start with step 1
   const [loading, setLoading] = useState(false);
+  const [countdown, setCountdown] = useState(5);
   const [suggestions, setSuggestions] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState('');
   const [businessName, setBusinessName] = useState('');
@@ -244,6 +246,7 @@ const handleAddressChoice = (manual) => {
     setShowSuccess(true);
 
     setError("");
+    setStep(5);
   } catch (err) {
     console.error("API Error", err);
 
@@ -257,10 +260,20 @@ const handleAddressChoice = (manual) => {
 
   useEffect(() => {
   if (showSuccess) {
-    const timer = setTimeout(() => {
-      router.push("/"); // 👈 redirect to homepage
-    }, 3000); // wait 3 seconds so alert is visible
-    return () => clearTimeout(timer);
+    let counter = 5; // start countdown from 5
+    setCountdown(counter); // make sure you have a countdown state
+
+    const interval = setInterval(() => {
+      counter -= 1;
+      setCountdown(counter);
+
+      if (counter === 0) {
+        clearInterval(interval);
+        router.push("/"); // redirect when countdown finishes
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
   }
 }, [showSuccess, router]);
 
@@ -274,10 +287,10 @@ const handleAddressChoice = (manual) => {
         className="object-cover z-0 hidden md:block"
         priority
       />
-       {step > 1 && (
+       {step > 1 && step !== 5 && (
             <button
               onClick={prevStep}
-              className="absolute top-8   left-7 md:left-10 lg:left-20 z-30 mt-25 md:mt-12 lg:mt-30 flex items-center   hover:bg-white/60 cursor-pointer bg-white text-blue-900 text-sm md:text-lg lg:text-lg px-3 md:px-5 py-1 rounded-full shadow-lg transition"
+              className="absolute top-8 nav-link2  left-7 md:left-10 lg:left-20 z-30 mt-25 md:mt-12 lg:mt-30 flex items-center   hover:bg-white/60 cursor-pointer bg-white text-blue-900 text-sm md:text-lg lg:text-lg px-3 md:px-5 py-1 rounded-full shadow-lg transition"
             >
               <FaArrowRightLong className="rotate-180" />
             </button>
@@ -288,10 +301,6 @@ const handleAddressChoice = (manual) => {
       <div>
 
 
-        {showSuccess && (
-            <SuccessAlert/>
-        )}
-
        <AnimatePresence mode="wait">
   {step === 1 && (
     <motion.div
@@ -301,7 +310,7 @@ const handleAddressChoice = (manual) => {
               transition={{ duration: 0.8 }}
       className="relative md:pl-10 lg:pl-20 md:pr-30 z-20 min-h-screen flex items-start justify-center px-7 md:px-10 lg:px-20 pt-40 md:pt-30 lg:pt-50"
     >
-    <div className="bg-white p-6 md:p-8 lg:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-xl">
+    <div className="bg-white p-6 md:p-8 lg:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-md nav-link2">
     <h2 className=" text-md md:text-lg lg:text-2xl font-extrabold mb-6 text-blue-900">
               Help Us Understand Your Current Setup
             </h2>
@@ -383,7 +392,7 @@ const handleAddressChoice = (manual) => {
       transition={{ duration: 0.5 }}
       className=" relative md:pl-10 lg:pl-20 md:pr-30  z-20 min-h-screen flex items-start justify-center px-7 sm:px-10 md:px-12  pt-40 md:pt-30 lg:pt-50"
     >
-    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-xl">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-2xl w-full md:max-w-sm lg:max-w-md nav-link2">
       <h1 className="text-sm md:text-xl lg:text-2xl text-blue-900 font-extrabold mb-2">
               Kindly provide your business postal code
             </h1>
@@ -471,7 +480,7 @@ const handleAddressChoice = (manual) => {
       transition={{ duration: 0.5 }}
       className="relative z-20 lg:pl-20 md:pl-10 md:pr-30  min-h-screen flex items-start justify-center px-7 md:px-10 lg:px-28  pt-40 md:pt-30 lg:pt-50"
     >
-    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm  lg:max-w-xl">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm  lg:max-w-md nav-link2">
       <h2 className="text-2xl md:text-xl lg:text-2xl font-extrabold mb-6 text-center text-blue-900">
           Enter your business address 
         </h2>
@@ -575,7 +584,7 @@ const handleAddressChoice = (manual) => {
       transition={{ duration: 0.5 }}
       className="relative z-20 lg:pl-20 md:pl-10 md:pr-30    min-h-screen flex items-start justify-center px-7 md:px-10 lg:px-30 pt-40  md:pt-30 lg:pt-50 ."
     >
-    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm lg:max-w-xl">
+    <div className="bg-white p-6 sm:p-8 md:p-8 rounded-2xl shadow-xl w-full md:max-w-sm lg:max-w-md nav-link2">
         <h2 className="lg:text-2xl sm:text-sm md:text-xl font-extrabold mb-6 text-left text-blue-900">
           You are almost there! Just a few more details so we can help you unlock your savings.
         </h2>
@@ -766,6 +775,37 @@ const handleAddressChoice = (manual) => {
 </button>
       </div>
    </motion.div>
+  )}
+  {step === 5 && (
+    <div className="relative z-20 lg:pl-20 md:pl-10 md:pr-30    min-h-screen flex items-start justify-center px-7 md:px-10 lg:px-30 pt-40  md:pt-30 lg:pt-50 .">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white p-6 md:p-8 lg:p-8 rounded-2xl shadow-2xl w-full text-center md:max-w-sm lg:max-w-md nav-link2"
+      >
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+          className="flex justify-center mb-6"
+        >
+          <CheckCircle className="w-20 h-20 text-green-500" />
+        </motion.div>
+  
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          Submitted!
+        </h1>
+        <p className="text-gray-600 text-lg mb-8">
+          Thanks for filling up the form.  
+          Our experts will contact you shortly to assist further.
+        </p>
+  
+        <p className="text-gray-500 text-sm">
+    Redirecting in <span className="font-semibold">{countdown}</span> seconds...
+  </p>
+      </motion.div>
+    </div>
   )}
 </AnimatePresence>
       </div>

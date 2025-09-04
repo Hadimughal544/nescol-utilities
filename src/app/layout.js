@@ -37,6 +37,7 @@ export const metadata = {
     "graphic design UK",
     "digital marketing UK",
   ],
+  siteName: "Nescol Utilities",
   icons: {
     icon: "/favicon.ico",
   },
@@ -47,6 +48,7 @@ export const metadata = {
 
   openGraph: {
     title: "Nescol Utilities",
+    siteName: "Nescol Utilities",
     description:
       "Say goodbye to inflated bills. We give you affordable rates that help your business save big.",
     url: "https://nescolutilities.co.uk",
@@ -62,8 +64,13 @@ export const metadata = {
     locale: "en_GB",
     type: "website",
   },
+  other: {
+    "application-name": "Nescol Utilities",   // 👈 extra signal
+    "apple-mobile-web-app-title": "Nescol Utilities",
+  },
   twitter: {
     card: "summary_large_image",
+    siteName: "Nescol Utilities",
     title: "Nescol Utilities",
     description:
       "Say goodbye to inflated bills. We give you affordable rates that help your business save big.",
@@ -74,6 +81,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* ✅ JSON-LD Schema for Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Nescol Utilities",
+              "url": "https://nescolutilities.co.uk",
+              "logo": "https://nescolutilities.co.uk/assets/mainlogo.png",
+              "sameAs": [
+                "https://www.linkedin.com/company/nescolutilities"
+              ]
+            }),
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <main className="bg-white ">
           <Header />

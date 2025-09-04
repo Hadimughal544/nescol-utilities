@@ -31,13 +31,13 @@ export default function SustainabilitySection() {
         initial="hidden"
         animate="show"
       >
-        <motion.div variants={cardVariants} className="flex flex-col items-center gap-8 bg-white p-6 rounded-xl shadow-[4px_4px_6px_rgba(0,0,0,0.3)]">
+        <motion.div variants={cardVariants} className="flex flex-col items-center nav-link2 gap-8 bg-white p-6 rounded-xl ">
           <h3 className="font-bold text-lg mb-2">Energy Insights</h3>
           <div className="text-7xl text-black mb-4"><BsGraphUpArrow /></div>
           <p className="text-center max-w-[250px]">Understand your consumption to make informed choices.</p>
         </motion.div>
 
-        <motion.div variants={cardVariants} className="flex flex-col items-center gap-8 bg-white p-6 rounded-xl shadow-[4px_4px_6px_rgba(0,0,0,0.3)]">
+        <motion.div variants={cardVariants} className="flex flex-col items-center gap-8 bg-white p-6 rounded-xl nav-link2">
           <h3 className="font-bold text-lg mb-2">Pay What’s Fair</h3>
           <div className="text-7xl text-black mb-4"><AiOutlinePound /></div>
           <p className="text-center max-w-[250px]">
@@ -45,7 +45,7 @@ export default function SustainabilitySection() {
           </p>
         </motion.div>
 
-        <motion.div variants={cardVariants} className="flex flex-col items-center gap-8 bg-white p-6 rounded-xl shadow-[4px_4px_6px_rgba(0,0,0,0.3)]">
+        <motion.div variants={cardVariants} className="flex flex-col items-center gap-8 bg-white p-6 rounded-xl nav-link2">
           <h3 className="font-bold text-lg mb-2">Save Smarter</h3>
           <div className="text-7xl text-black mb-4"><IoWalletOutline /></div>
           <p className="text-center max-w-[250px]">
