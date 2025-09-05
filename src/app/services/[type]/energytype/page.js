@@ -21,6 +21,12 @@ export default function EnergyType() {
     if (type === "broadband") {
       router.push("https://broadband.loveenergysavings.com/");
     }
+    if(type === "energy") {
+      router.push("/services/energy/Homeservices")
+    }
+    if(type === "water") {
+      router.push("/services/water/Homeservices")
+    }
   };
 
   return (

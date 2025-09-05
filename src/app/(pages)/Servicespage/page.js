@@ -43,7 +43,7 @@ export default function Services() {
             <Link href={`/services/water/energytype`}>
             <Box  icon={<FaTint />} label="Water" text="Reliable suppliers, sustainable solutions."/>
             </Link>
-            <Link href="/services/payment-solution/firstform">
+            <Link href="/services/payment-solution/payment-solution">
             <Box icon={<AiOutlinePound />} label="Payment Solution" text="Easy, efficient disposal services"/>
             </Link>
             <Link href="/services/Graphics/tech-services">
