@@ -57,7 +57,7 @@ export default function sitemap() {
       priority: 0.7,
     },
     {
-      url: "htthttps://nescolutilities.co.uk/Servicespage",
+      url: "https://nescolutilities.co.uk/Servicespage",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.5,

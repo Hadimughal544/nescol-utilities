@@ -58,7 +58,7 @@ export default function Energy() {
 function Box({ title, icon }) {
   return (
     <div
-      className="group flex flex-col items-center justify-center 
+      className="group flex flex-col items-center nav-link2 hover:scale-105  justify-center 
                  w-full sm:w-40 md:w-48 h-28 sm:h-32 p-4 
                  bg-white hover:bg-gray-100 
                  rounded-2xl shadow-2xl md:shadow-lg cursor-pointer transition-all"

@@ -57,15 +57,15 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex gap-10 items-center text-sm font-bold">
           <div className="flex gap-7 items-center">
-            <Link href="/services/energy/energytype" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">Energy</Link>
+            <Link href="/services/energy/energytype" className="nav-link hover:scale-115 py-2 px-4 hover:text-pink-500 transition-colors">Energy</Link>
             <span className="border-1 h-8 border-pink-500"></span>
-            <Link href="/services/broadband/energytype" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">Broadband</Link>
+            <Link href="/services/broadband/energytype" className="nav-link py-2 px-4 hover:scale-115  hover:text-pink-500 transition-colors">Broadband</Link>
             <span className="border-1 h-8 border-pink-500"></span>
-            <Link href="/Servicespage" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">Services</Link>
+            <Link href="/Servicespage" className="nav-link py-2 px-4 hover:text-pink-500 hover:scale-115  transition-colors">Services</Link>
             <span className="border-1 h-8 border-pink-500"></span>
-            <Link href="/about-us" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">About Us</Link>
+            <Link href="/about-us" className="nav-link py-2 px-4 hover:text-pink-500 hover:scale-115  transition-colors">About Us</Link>
             <span className="border-1 h-8 border-pink-500"></span>
-            <Link href="/complaint" className="nav-link py-2 px-4 hover:text-pink-500 transition-colors">Complaint</Link>
+            <Link href="/complaint" className="nav-link py-2 px-4 hover:text-pink-500 hover:scale-115  transition-colors">Complaint</Link>
           </div>
 
           {/* Contact Info */}
