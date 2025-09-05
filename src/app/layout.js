@@ -10,6 +10,7 @@ import SuccessAlert from "./components/SuccessAlert";
 import TrustpilotWidget from "./components/TrustpilotWidget";
 import ReviewSection from "./components/ReviewSection";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -126,8 +127,26 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* ✅ JSON-LD Schema for Organization */}
-        <script
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-G-Z2KY6Q4TC6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-G-Z2KY6Q4TC6', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+
+        {/* Organization Schema Markup */}
+        <Script
+          id="org-schema"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -137,7 +156,9 @@ export default function RootLayout({ children }) {
               "logo": "https://nescolutilities.co.uk/assets/mainlogo.png",
               "sameAs": [
                 "https://www.linkedin.com/company/nescolutilities"
-              ]
+              ],
+              "description":
+                "Nescol Utilities provides energy, broadband, water, IT, and payment solutions to businesses across the UK."
             }),
           }}
         />
