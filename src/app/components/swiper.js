@@ -32,16 +32,23 @@ export default function LogoSwiper() {
     <div className="bg-white px-2 rounded-xl h-40">
       <Swiper
         modules={[Autoplay]}
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
         loop={true}
         spaceBetween={20}
         breakpoints={{
-          320: { slidesPerView: 3 },   // small mobiles
-          640: { slidesPerView: 3 },   // bigger mobiles
-          768: { slidesPerView: 4 },   // tablets
-          1024: { slidesPerView: 5 },  // laptops
-          1280: { slidesPerView: 5 },  // desktops
+          320: { slidesPerView: 3 }, // small mobiles
+          640: { slidesPerView: 3 }, // bigger mobiles
+          768: { slidesPerView: 4 }, // tablets
+          1024: { slidesPerView: 5 }, // laptops
+          1280: { slidesPerView: 5 }, // desktops
+        }
+
+        } // number of logos visible at once
+        autoplay={{
+          delay: 0, // no delay between slides
+          disableOnInteraction: false,
         }}
+        speed={6000} // smooth scrolling speed (bigger = slower)
+        allowTouchMove={false} // prevent dragging
         className="h-full bg-gray-100"
       >
         {logos.map((src, i) => (
@@ -55,7 +62,7 @@ export default function LogoSwiper() {
                 alt={`Logo ${i + 1}`}
                 width={200}
                 height={110}
-                className="object-contain transition-all duration-300 hover:scale-105"
+                className="object-contain"
               />
             </div>
           </SwiperSlide>

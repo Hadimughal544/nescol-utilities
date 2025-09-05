@@ -19,9 +19,9 @@ const page = () => {
             priority
           />
            <div className="absolute inset-0 bg-pink-600 md:hidden z-0" />
-          <div className=' relative  md:pl-10 lg:pl-20 md:pr-30 z-20 min-h-screen flex flex-col text-white items-start px-7 md:px-10 lg:px-30 pt-40 md:pt-30 lg:pt-50'>
+          <div className=' relative  md:pl-10 lg:pl-20 md:pr-30 z-20 min-h-screen flex flex-col text-white items-start px-7 md:px-10 lg:px-30 pt-33 md:pt-30 lg:pt-50'>
 
-            <h1 className=" md:ml-5 lg:ml-0 text-2xl md:text-xl text-center md:text-left lg:text-4xl font-extrabold mb-4 md:mb-0 lg:mb-4">
+            <h1 className=" md:ml-5 lg:ml-0 text-2xl md:text-xl text-center md:text-left lg:text-4xl font-extrabold mb-2 md:mb-0 lg:mb-4">
               Smart Support for Smarter Bills 
             </h1>
             <h3 className=" md:ml-5 lg:ml-0 sm:text-sm md:text-sm lg:text-lg text-center md:text-left leading-relaxed mb-4">
@@ -31,7 +31,7 @@ const page = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="max-w-lg  bg-white nav-link2 rounded-2xl border w-full md:max-w-sm lg:max-w-lg  border-gray-200 p-6 text-center md:text-left"
+              className="max-w-lg  bg-white nav-link2 rounded-2xl border w-full md:max-w-sm lg:max-w-lg  border-gray-200 p-6 text-center md:text-left mb-4"
             >
       <div className="">
   <h1 className=" text-xl md:text-sm lg:text-xl font-bold text-gray-800 mb-4">
