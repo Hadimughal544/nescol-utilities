@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -23,7 +24,7 @@ export default function About() {
           <p>
              At Nescol Utilities, we believe managing your utilities shouldn’t be complicated.
             That is why we have built a customer-focused company that delivers straightforward
-            solutions in energy, broadband, water, payments, and more — all in one place.
+            solutions in energy, broadband, water, payments, and more all in one place.
             Whether you are a homeowner, small business, or large enterprise, we take the
             confusion out of switching, saving, and scaling.
           </p>
@@ -34,7 +35,7 @@ export default function About() {
           <p>
             Nescol Utilities is a UK-based utility consultancy dedicated to helping people and businesses make smarter decisions.
             From competitive energy tariffs to fast broadband and merchant card services, we partner with trusted providers to bring
-            you better value — without the usual headaches. Our team is made up of experienced industry professionals who genuinely care
+            you better value without the usual headaches. Our team is made up of experienced industry professionals who genuinely care
             about your bottom line.
           </p>
         </Section>
@@ -68,17 +69,29 @@ export default function About() {
             <li>Rapid response time with a dedicated personal advisor</li>
             <li>Exclusive deals through our partner network</li>
             <li>Full-service utility setup for new properties</li>
-            <li>Ongoing support — long after the contract is signed</li>
+            <li>Ongoing support  long after the contract is signed</li>
           </ul>
+        </Section>
+
+                        <Section title="Your Trusted Partner for IT Services">
+          <p>
+            At Nescol Utilities, we provide trusted IT services across the UK with a focus on reliability and affordability. 
+            Through our collaboration with <Link href="https://enid.pk/innovations" className=" hover:underline ">Enid Innovation</Link>, a leading IT company in Asia, we combine international expertise
+             with streamlined operations. This partnership allows us to deliver high‑quality solutions at lower costs, ensuring
+              our clients benefit from dependable services at competitive rates. By bridging innovation and efficiency, we make
+               advanced IT support accessible to businesses and individuals throughout the UK.
+          </p>
         </Section>
 
         {/* Let's Work Together */}
         <Section title="Let's work together">
           <p>
             Whether you are moving premises, looking to cut costs, or just need advice, Nescol Utilities is here to make it happen.
-            We do not just compare prices — we build partnerships. Let’s simplify your utilities and put you back in control.
+            We do not just compare prices we build partnerships. Let’s simplify your utilities and put you back in control.
           </p>
         </Section>
+
+
       </div>
     </main>
   );

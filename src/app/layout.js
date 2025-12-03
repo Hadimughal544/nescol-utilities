@@ -11,6 +11,7 @@ import TrustpilotWidget from "./components/TrustpilotWidget";
 import ReviewSection from "./components/ReviewSection";
 import "./globals.css";
 import Script from "next/script";
+import BTSwiper from "./components/BTswiper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,9 @@ export const metadata = {
   title: "Nescol Utilities",
   description:
     "Helping UK businesses cut costs on Energy, Broadband, Water, and Payment solutions—while also delivering expert Web Development, App Development, SEO, and Graphic Design services to boost your digital presence.",
+  alternates: {
+    canonical: "https://nescolutilities.co.uk/",
+  },
   keywords: [
     "UK business broker",
     "energy broker UK",
@@ -173,6 +177,15 @@ export default function RootLayout({ children }) {
           <div>
             <ReviewSection />
           </div>
+                    {/* Supplier Logos */}
+          <section className="mt-5 mb-5 bg-gray-100">
+            <div className="flex items-center justify-center pt-8 pb-4 px-4 text-center">
+              <h1 className="text-xl sm:text-2xl font-semibold">
+                We connect you with vetted suppliers for reliable service.
+              </h1>
+            </div>
+            <LogoSwiper />
+          </section>
 
           <section className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto py-16 px-4">
             <div className="flex-[1.5] relative h-[350px]">
@@ -206,15 +219,15 @@ export default function RootLayout({ children }) {
             </div>
           </section>
 
-          {/* Supplier Logos */}
-          <section className="mt-5 mb-5 bg-gray-100">
+                    <section className="mt-5 mb-5 bg-gray-100">
             <div className="flex items-center justify-center pt-8 pb-4 px-4 text-center">
-              <h1 className="text-xl sm:text-2xl font-semibold">
-                We connect you with vetted suppliers for reliable service.
+              <h1 className="text-xl sm:text-lg font-semibold">
+                We match you with trusted suppliers to keep you connected.
               </h1>
             </div>
-            <LogoSwiper />
+            <BTSwiper/>
           </section>
+
         </main>
         <FloatingButton />
         <Footer />

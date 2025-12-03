@@ -28,7 +28,7 @@ export default function Footer() {
   </div>
 
   <p className="text-md">
-    Let your business thrive — we bring the <br />
+    Let your business thrive we bring the <br />
     best deals to you.
   </p>
 
@@ -108,6 +108,7 @@ All rights reserved.<br></br>NEIL & NESCOL LTD is a registered company in Scotla
 Registered Address: 
 3/2, 28 Ancroft Street, Glasgow, Scotland, G20 7HU
 <br></br>Proudly made in Scotland.
+<br></br>Designed & Developed by <Link href="https://enid.pk/innovations" className=" hover:underline ">Enid Innovation</Link>
         </div>
       </div>
     </footer>
