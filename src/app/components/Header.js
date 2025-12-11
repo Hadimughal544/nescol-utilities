@@ -61,7 +61,7 @@ export default function Header() {
             <span className="border-1 h-8 border-pink-500"></span>
             <Link href="/services/broadband/energytype" className="nav-link py-2 px-4 hover:scale-115  hover:text-pink-500 transition-colors">Broadband</Link>
             <span className="border-1 h-8 border-pink-500"></span>
-            <Link href="/Servicespage" className="nav-link py-2 px-4 hover:text-pink-500 hover:scale-115  transition-colors">Services</Link>
+            <Link href="/Services" className="nav-link py-2 px-4 hover:text-pink-500 hover:scale-115  transition-colors">Services</Link>
             <span className="border-1 h-8 border-pink-500"></span>
             <Link href="/about-us" className="nav-link py-2 px-4 hover:text-pink-500 hover:scale-115  transition-colors">About Us</Link>
             <span className="border-1 h-8 border-pink-500"></span>
@@ -103,7 +103,7 @@ export default function Header() {
 
           <Link href="/services/energy/energytype" onClick={() => setMobileMenuOpen(false)}>Energy</Link>
           <Link href="/services/broadband/energytype" onClick={() => setMobileMenuOpen(false)}>Broadband</Link>
-          <Link href="/Servicespage" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link href="/Services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
           <Link href="/about-us" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
           <Link href="/complaint" onClick={() => setMobileMenuOpen(false)}>Complaint</Link>
 
