@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="">
       {/* ✅ Hero Section */}
-      <div className="relative md:h-[470px] lg:h-[800px] w-full mt-10 lg:mt-5 md:mt-11">
+      <div className="relative md:h-[470px] lg:h-[900px] w-full mt-10 lg:mt-5 md:mt-11">
         {/* Background Image */}
         <Image
           src="/assets/Homepage2.jpg"

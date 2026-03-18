@@ -35,7 +35,7 @@ export default function Footer() {
   {/* Icons + Trustpilot stacked */}
   {/* Icons + Trustpilot in same row */}
 <div className="flex items-center gap-3 text-2xl text-pink-500">
-  <Link href="#"><FaTiktok size={30} /></Link>
+  {/* <Link href="#"><FaTiktok size={30} /></Link> */}
   <Link href="https://www.linkedin.com/company/nescolutilities"><IoLogoLinkedin size={30} /></Link>
   <Link href="#"><SiInstagram size={30} /></Link>
 </div>
@@ -47,12 +47,11 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <h2 className="text-2xl font-bold mb-4">Explore</h2>
             <ul className="flex flex-col space-y-2 text-md">
-              <li><Link href="/" className="hover:underline">Home</Link></li>
-              <li><Link href="/services/energy/energytype" className="hover:underline">Energy</Link></li>
-              <li><Link href="/services/broadband/energytype" className="hover:underline">Broadband</Link></li>
               <li><Link href="/Services" className="hover:underline">Services</Link></li>
               <li><Link href="/about-us" className="hover:underline">About Us</Link></li>
-              <li><Link href="/complaint" className="hover:underline">Complaint</Link></li>
+              <li><Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
+              <li><Link href="/terms-conditions" className="hover:underline">Terms & Conditions</Link></li>
+              <li><Link href="/complaint" className="hover:underline">Complaint Procedure</Link></li>
             </ul>
           </div>
 

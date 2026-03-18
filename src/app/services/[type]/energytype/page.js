@@ -31,7 +31,7 @@ export default function EnergyType() {
 
   return (
     <main className="relative pb-20 md:pb-0">
-      <div className="relative h-[850px] md:h-[750px] w-full">
+      <div className="relative h-[850px] md:h-[800px] w-full">
         {/* Background Image */}
         <Image
           src="/assets/EnergyType1.jpg"
